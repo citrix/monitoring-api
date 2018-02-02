@@ -1,0 +1,12 @@
+site_name: Citrix Director 7.6 Monitoring API
+site_description: Reference guide for Citrix Director Monitoring 7.6 API
+
+theme_dir: citrix-sdk
+markdown_extensions:
+  - admonition
+  - codehilite
+  - toc:
+     anchorlink: True
+
+pages:
+- Index: index.md
