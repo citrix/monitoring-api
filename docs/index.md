@@ -1,4 +1,4 @@
-#Introduction
+# Citrix Monitor Service API 7.15
 
 The Monitor Service API is built on top of SQL Server databases using Windows Communication Foundation (WCF) Data Services that are populated during processing and consolidation.
 
@@ -16,7 +16,7 @@ You can use the API to:
 
 -   Build a custom user interface on top of the data that the API provides
 
-#Data Available using the API
+# Data Available using the API
 
 The following types of data are available through the Monitor Service API:
 
@@ -53,15 +53,15 @@ permissions, see [Delegated Administration](http://docs.citrix.com/en-us/xenapp-
 
 ##Data Access Security
 
-If you choose to use SSL, you must configure SSL on all Delivery Controllers in the site; you cannot use a mixture of SSL and non-SSL.
+If you choose to use TLS, you must configure TLS on all Delivery Controllers in the site; you cannot use a mixture of TLS and non-TLS.
 
-To secure Monitor Service endpoints using SSL, you must perform the following configuration. Some steps need to be done only once per site, others must be run from every machine hosting the Monitor Service in the site. The steps are described below.
+To secure Monitor Service endpoints using TLS, you must perform the following configuration. Some steps need to be done only once per site, others must be run from every machine hosting the Monitor Service in the site. The steps are described below.
 
 ***Part 1: Certificate registration with the system***
 
-1.  Create a certificate using a trusted certificate manager. The certificate must be associated with the port on the machine that you wish to use for OData SSL.
+1.  Create a certificate using a trusted certificate manager. The certificate must be associated with the port on the machine that you wish to use for OData TLS.
 
-2.  Configure the Monitor Service to use this port for SSL communication. The steps depend on your environment and how this works with certificates. The following example shows how to configure port 449:
+2.  Configure the Monitor Service to use this port for TLS communication. The steps depend on your environment and how this works with certificates. The following example shows how to configure port 449:
 
 -   Associate the certificate with a port:
 
