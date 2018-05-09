@@ -146,18 +146,17 @@ As OData Provider, Citrix Monitor Service API is implemented by ASP.NET Web API.
 
 For more detail about using ASP.NET Web API to create OData V4 endpoints, see [OData v4 Web API](https://docs.microsoft.com/en-us/aspnet/web-api/overview/odata-support-in-aspnet-web-api/odata-v4/create-an-odata-v4-endpoint)
 
-# Examples
-
+# Access methods
 
 The following examples show how to export Monitor Service data using the OData API. This topic also provides a list of URLs for available data sets.
 
-## Example 1 - Raw XML
+## Access using Raw XML
 
 1.  Place the URL for each data set into a web browser that is running with the appropriate administrative permissions for the XenApp and XenDesktop Site. Citrix recommends using the Chrome browser with the Advanced Rest Client add-in.
 
 2.  View the source.
 
-## Example 2 - PowerPivot with Excel
+## Access using PowerPivot with Excel
 
 1.  Install Microsoft Excel.
 
@@ -198,7 +197,7 @@ The following examples show how to export Monitor Service data using the OData A
 
 You can now use PowerPivot to view and analyze the data with PivotTables and PivotCharts. For more information, see the Learning Center: <http://www.microsoft.com/en-us/bi/LearningCenter.aspx>
 
-## Example 3 - LinqPad
+## Access using LinqPad
 
 1.  Download and install the latest version of LinqPad from [http://www.linqpad.net](http://www.linqpad.net/).
 
@@ -216,11 +215,11 @@ You can now use PowerPivot to view and analyze the data with PivotTables and Piv
 
 5.  You can now run LINQ queries against the data feed and export the data as needed. For example, right-click Catalogs and choose **Catalogs.Take(100)**. This returns the first 100 Catalogs in the database. Choose Export&gt;Export to Excel with formatting.
 
-## Example 4 – Client Library
+## Access using Client Library
 
 Currently Citrix Monitor Service supports OData protocol V3 and V4. So, when implement the OData consumers with various programming platforms, please select correct client libraries.
 
-### Example 4.1 – C\#/.NET
+### Using C\#/.NET
 
 ***Calling an OData Service From a .NET Client (C\#)***
 
@@ -286,7 +285,7 @@ Code Fragment:
     }
 ```
  
-### Example 4.2 – Java
+### Using Java
 
 **Calling an OData Service from a Java Client based on Odata4j v0.3 library:**
 
