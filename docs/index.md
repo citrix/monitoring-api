@@ -162,7 +162,7 @@ The following examples show how to export Monitor Service data using the OData A
 1.  Install Microsoft Excel.
 
 2.  Follow the instructions here to install PowerPivot (depending on whether or not you are using 2010 or
-    2013): [https://support.office.com/en-us/article/Start-Power-Pivot-in-Microsoft-Excel-2013-add-in-a891a66d-36e3-43fc-81e8-fc4798f39ea8.]
+    2013): [https://support.office.com/en-us/article/Start-Power-Pivot-in-Microsoft-Excel-2013-add-in-a891a66d-36e3-43fc-81e8-fc4798f39ea8]
 
 3.  Open Excel (running with the appropriate administrative permissions for the XenApp and XenDesktop Site).
 
@@ -175,7 +175,7 @@ The following examples show how to export Monitor Service data using the OData A
 3.  Click **From Data Feeds** in the ribbon.
 
 4.  Choose a Friendly Connection Name (for example: XenDesktop Monitoring Data) and enter the data feed url:
-    http://{dc-host}/Citrix/Monitor/OData/<OData endpoint version-v3 or v4>/Data (or https: if you are using SSL).
+    http://{dc-host}/Citrix/Monitor/OData/{OData endpoint version-v3 or v4}/Data (or https: if you are using SSL).
 
 5.  Click **Next**.
 
@@ -187,7 +187,7 @@ The following examples show how to export Monitor Service data using the OData A
 
 2.  Choose From Other Sources &gt; From OData Data Feed
 
-3.  Enter the data feed url: http://{dc-host}/Citrix/Monitor/OData/<OData endpoint version-v3 or v4>/Data (or https: if you are
+3.  Enter the data feed url: http://{dc-host}/Citrix/Monitor/OData/{OData endpoint version-v3 or v4}/Data (or https: if you are
     using SSL) and click **Next**.
 
 4.  Select the tables you want to import into Excel and click **Next**.
@@ -196,7 +196,7 @@ The following examples show how to export Monitor Service data using the OData A
 
 6.  Choose **Connection Only** or **Pivot Report**. The data is retrieved.
 
-You can now use PowerPivot to view and analyze the data with PivotTables and PivotCharts. For more information, see the Learning Center: <http://www.microsoft.com/en-us/bi/LearningCenter.aspx>
+You can now use PowerPivot to view and analyze the data with PivotTables and PivotCharts. For more information, see the Learning Center: [http://www.microsoft.com/en-us/bi/LearningCenter.aspx]
 
 ## Access using LinqPad
 
@@ -212,7 +212,7 @@ You can now use PowerPivot to view and analyze the data with PivotTables and Piv
 
     b.  To use the OData v4 endpoint the first time, click **View More Drivers**, choose the OData V4 Driver, click the **Download and Enable driver** link. This adds the Odata 4 driver to the list of available drivers. Subsequently, you can select OData 4 and click **Next**.
 
-4.  Enter the data feed URL: http://{dc-host}/Citrix/Monitor/OData/<OData endpoint version-v3 or v4>/Data (or https: if you are using SSL). If necessary, enter the username and password to access the Delivery Controller. Click **OK**.
+4.  Enter the data feed URL: http://{dc-host}/Citrix/Monitor/OData/{OData endpoint version-v3 or v4}/Data (or https: if you are using SSL). If necessary, enter the username and password to access the Delivery Controller. Click **OK**.
 
 5.  You can now run LINQ queries against the data feed and export the data as needed. For example, right-click Catalogs and choose **Catalogs.Take(100)**. This returns the first 100 Catalogs in the database. Choose Export&gt;Export to Excel with formatting.
 
