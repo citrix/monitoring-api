@@ -1,4 +1,4 @@
-# Citrix Monitor Service API 7.16
+# Citrix Monitor Service API 7.17
 
 The Monitor Service API is built on the SQL Server Monitor database that is populated during processing and consolidation. The Monitor Service API is based on the ASP.NET Web API Framework.
 
