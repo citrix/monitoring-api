@@ -175,7 +175,7 @@ The following examples show how to export Monitor Service data using the OData A
 3.  Click **From Data Feeds** in the ribbon.
 
 4.  Choose a Friendly Connection Name (for example: XenDesktop Monitoring Data) and enter the data feed url:
-    http://{dc-host}/Citrix/Monitor/OData/<OData endpoint version-v3 or v4>/Data (or https: if you are using SSL).
+    http://{dc-host}/Citrix/Monitor/OData/v4/Data (or https: if you are using SSL).
 
 5.  Click **Next**.
 
@@ -187,7 +187,7 @@ The following examples show how to export Monitor Service data using the OData A
 
 2.  Choose From Other Sources &gt; From OData Data Feed
 
-3.  Enter the data feed url: http://{dc-host}/Citrix/Monitor/OData/<OData endpoint version-v3 or v4>/Data (or https: if you are
+3.  Enter the data feed url: http://{dc-host}/Citrix/Monitor/OData/v4/Data (or https: if you are
     using SSL) and click **Next**.
 
 4.  Select the tables you want to import into Excel and click **Next**.
@@ -212,7 +212,7 @@ You can now use PowerPivot to view and analyze the data with PivotTables and Piv
 
     b.  To use the OData v4 endpoint the first time, click **View More Drivers**, choose the OData V4 Driver, click the **Download and Enable driver** link. This adds the Odata 4 driver to the list of available drivers. Subsequently, you can select OData 4 and click **Next**.
 
-4.  Enter the data feed URL: http://{dc-host}/Citrix/Monitor/OData/<OData endpoint version-v3 or v4>/Data (or https: if you are using SSL). If necessary, enter the username and password to access the Delivery Controller. Click **OK**.
+4.  Enter the data feed URL: http://{dc-host}/Citrix/Monitor/OData/v4/Data (or https: if you are using SSL). If necessary, enter the username and password to access the Delivery Controller. Click **OK**.
 
 5.  You can now run LINQ queries against the data feed and export the data as needed. For example, right-click Catalogs and choose **Catalogs.Take(100)**. This returns the first 100 Catalogs in the database. Choose Export&gt;Export to Excel with formatting.
 
@@ -229,7 +229,7 @@ Currently Citrix Monitor Service supports OData protocol V3 and V4. So, when imp
 Code Fragment:
 <br />
 ```
-    /* GET http://{dc-host}/Citrix/Monitor/Odata/<OData endpoint version-v3 or v4>/Data/Catalogs */
+    /* GET http://{dc-host}/Citrix/Monitor/Odata/v4/Data/Catalogs */
     private static string ListAllCatalgs(MonitorService.DatabaseContext context)
     {
         StringBuilder sb = new StringBuilder();
@@ -258,7 +258,7 @@ Code Fragment:
 <br />
 ```
     /* use the LINQ Skip and Take methods to skips the first 40 results and takes the next 10 */
-    /* GET http://{dc-host}/Citrix/Monitor/Odata/<OData endpoint version-v3 or v4>/Machines()?$orderby=Id desc&$skip=40&$top=10 */
+    /* GET http://{dc-host}/Citrix/Monitor/Odata/v4/Machines()?$orderby=Id desc&$skip=40&$top=10 */
     private static void ListMachinesPaged(MonitorService.DatabaseContext context)
     {
         var machines =
@@ -298,7 +298,7 @@ Code Fragment:
 
 ```java
 // create consumer instance
-String serviceUrl = "http://{dc-host}/Citrix/Monitor/Odata/<OData endpoint version-v3 or v4>/Data/";
+String serviceUrl = "http://{dc-host}/Citrix/Monitor/Odata/v4/Data/";
 ODataConsumer consumer = ODataConsumer.create(serviceUrl);
 ```
 
@@ -322,20 +322,20 @@ System.out.println(qProperty.getValue());
 
 ```java
 // =================Filter Query===========================================
-/* GET http://{dc-host}/Citrix/Monitor/Odata/<OData endpoint version-v3 or v4>/Data/Machines */
+/* GET http://{dc-host}/Citrix/Monitor/Odata/v4/Data/Machines */
 String entitySetName = "Machines";        
 qList = consumer.getEntities(entitySetName).execute();
 System.out.println(qList.first().toString());
 
-/* GET http://{dc-host}/Citrix/Monitor/Odata/<OData endpoint version-v3 or v4>/Data/Machines()?$select=Name, IPAddress */
+/* GET http://{dc-host}/Citrix/Monitor/Odata/v4/Data/Machines()?$select=Name, IPAddress */
 qList = consumer.getEntities(entitySetName).select("Name,IPAddress").execute();
 System.out.println(qList.first().toString());
 
-/* GET http://{dc-host}/Citrix/Monitor/Odata/<OData endpoint version-v3 or v4>/Machines()?$orderby=Id desc&$skip=40&$top=10 */
+/* GET http://{dc-host}/Citrix/Monitor/Odata/v4/Machines()?$orderby=Id desc&$skip=40&$top=10 */
 qList = consumer.getEntities(entitySetName).orderBy("Id desc").skip(2).top(10).execute();
 System.out.println(qList.first().toString());
 
-/* GET http://{dc-host}/Citrix/Monitor/Odata/<OData endpoint version-v3 or v4>/Machines()?$filter=Name eq '$Name'*/
+/* GET http://{dc-host}/Citrix/Monitor/Odata/v4/Machines()?$filter=Name eq '$Name'*/
 qList = consumer.getEntities(entitySetName).filter("Name eq 'DOMAIN\\HOSTNAME'").execute();
 System.out.println(qList.first().toString());
 ```
@@ -347,18 +347,18 @@ System.out.println(qList.first().toString());
 
 | URL         | Description   |                                                                             
 |-------|--------|
-| http://{dc-host}/Citrix/Monitor/OData/{OData endpoint version-v3 or v4}/Data/Catalogs                    | Catalog images in the Site                                                                      |
-| http://{dc-host}/Citrix/Monitor/OData{OData endpoint version-v3 or v4}/Data/ConnectionFailureCategories | Grouping for connection failure types                                                           |
-| http://{dc-host}/Citrix/Monitor/OData/{OData endpoint version-v3 or v4}/Data/ConnectionFailureLogs       | Log of each connection failure in the Site                                                      |
-| http://{dc-host}/Citrix/Monitor/OData/{OData endpoint version-v3 or v4}/Data/Connections                 | Represents an initial connection or reconnect for a session                                     |
-| http://{dc-host}/Citrix/Monitor/OData/{OData endpoint version-v3 or v4}/Data/DesktopGroups               | Delivery Groups in the Site                                                                     |
-| http://{dc-host}/Citrix/Monitor/OData/{OData endpoint version-v3 or v4}/Data/FailureLogSummaries         | Failures (connection/machine) counts by time period and Delivery Group                          |
-| http://{dc-host}/Citrix/Monitor/OData/{OData endpoint version-v3 or v4}/Data/Hypervisors                 | Hosts (hypervisors) in the Site                                                                 |
-| http://{dc-host}/Citrix/Monitor/OData/{OData endpoint version-v3 or v4}/Data/LoadIndexes                 | Load Index data received from the Virtual Delivery Agent (VDA)                                  |
-| http://{dc-host}/Citrix/Monitor/OData/{OData endpoint version-v3 or v4}/Data/LoadIndexSummaries          | Load Index averages by time period and machine                                                  |
-| http://{dc-host}/Citrix/Monitor/OData/{OData endpoint version-v3 or v4}/Data/MachineFailureLogs          | Log of each machine failure by start and end date in the Site                                   |
-| http://{dc-host}/Citrix/Monitor/OData/{OData endpoint version-v3 or v4}/Data/Machines                    | Machines in the Site                                                                            |
-| http://{dc-host}/Citrix/Monitor/OData/{OData endpoint version-v3 or v4}/Data/SessionActivitySummaries    | Session counts and logon data by time period and delivery group                                 |
-| http://{dc-host}/Citrix/Monitor/OData/{OData endpoint version-v3 or v4}/Data/Sessions                    | Represents a user connected to a desktop                                                        |
-| http://{dc-host}/Citrix/Monitor/OData/{OData endpoint version-v3 or v4}/Data/TaskLogs                    | Log of all tasks and their status that have been run as part of the internal Monitor Service |
-| http://{dc-host}/Citrix/Monitor/OData/{OData endpoint version-v3 or v4}/Data/Users                       | Users that have launched a session in the Site                                                  |
+| http://{dc-host}/Citrix/Monitor/OData/v4/Data/Catalogs                    | Catalog images in the Site                                                                      |
+| http://{dc-host}/Citrix/Monitor/OData/v4/Data/ConnectionFailureCategories | Grouping for connection failure types                                                           |
+| http://{dc-host}/Citrix/Monitor/OData/v4/Data/ConnectionFailureLogs       | Log of each connection failure in the Site                                                      |
+| http://{dc-host}/Citrix/Monitor/OData/v4/Data/Connections                 | Represents an initial connection or reconnect for a session                                     |
+| http://{dc-host}/Citrix/Monitor/OData/v4/Data/DesktopGroups               | Delivery Groups in the Site                                                                     |
+| http://{dc-host}/Citrix/Monitor/OData/v4/Data/FailureLogSummaries         | Failures (connection/machine) counts by time period and Delivery Group                          |
+| http://{dc-host}/Citrix/Monitor/OData/v4/Data/Hypervisors                 | Hosts (hypervisors) in the Site                                                                 |
+| http://{dc-host}/Citrix/Monitor/OData/v4/Data/LoadIndexes                 | Load Index data received from the Virtual Delivery Agent (VDA)                                  |
+| http://{dc-host}/Citrix/Monitor/OData/v4/Data/LoadIndexSummaries          | Load Index averages by time period and machine                                                  |
+| http://{dc-host}/Citrix/Monitor/OData/v4/Data/MachineFailureLogs          | Log of each machine failure by start and end date in the Site                                   |
+| http://{dc-host}/Citrix/Monitor/OData/v4/Data/Machines                    | Machines in the Site                                                                            |
+| http://{dc-host}/Citrix/Monitor/OData/v4/Data/SessionActivitySummaries    | Session counts and logon data by time period and delivery group                                 |
+| http://{dc-host}/Citrix/Monitor/OData/v4/Data/Sessions                    | Represents a user connected to a desktop                                                        |
+| http://{dc-host}/Citrix/Monitor/OData/v4/Data/TaskLogs                    | Log of all tasks and their status that have been run as part of the internal Monitor Service |
+| http://{dc-host}/Citrix/Monitor/OData/v4/Data/Users                       | Users that have launched a session in the Site                                                  |
