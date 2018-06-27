@@ -47,7 +47,7 @@ The following types of data are available through the Monitor Service API:
 
 For the details of the Monitor Service schema, please refer to: [Monitor Service Schema](./api-schema.png)
 
-To determine the values returned by the Monitor Service OData API, see: [Citrix Monitor Data Model](./api-reference/Monitor.Model.html)
+To determine the values returned by the Monitor Service OData API, see: [Citrix Monitor Data Model](./api-reference/Monitor.Model.md)
 
 ## How to Access the Monitor Service Data
 
@@ -126,7 +126,7 @@ The query is processed on the server side and can be filtered further using the 
 
 The data modeled falls into three categories: aggregate data (the summary tables), current state of objects (machines, sessions, etc.), and log data, which is really historical events (connections, for example).
 
-**Note**: Enums are not supported in the OData protocol; integers are used in their place. To determine the values returned by the Monitor Service OData API, see [Monitor Service Data Model](./api-reference/Monitor.Model.html).
+**Note**: Enums are not supported in the OData protocol; integers are used in their place. To determine the values returned by the Monitor Service OData API, see [Monitor Service Data Model](./api-reference/Monitor.Model.md).
 
 ### What is OData Protocol?
 
