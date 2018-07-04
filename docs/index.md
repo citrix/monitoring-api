@@ -76,10 +76,12 @@ To secure Monitor Service endpoints using TLS, you must perform the following co
 
 -  Associate the certificate with a port:
 
-> netsh http add sslcert ipport=0.0.0.0:443
-> certhash=97bb629e50d556c80528f4991721ad4f28fb74e9
->
-> appid='{00000000-0000-0000-0000-000000000000}'
+```
+netsh http add sslcert ipport=0.0.0.0:443
+certhash=97bb629e50d556c80528f4991721ad4f28fb74e9
+
+appid='{00000000-0000-0000-0000-000000000000}'
+```
 
 **Tip**: *In a PowerShell command window, ensure you put single quotes around the GUID in the appID, as shown above, or the command will not work. Note that a line break has been added to this example for readability only.*
 
@@ -87,23 +89,23 @@ To secure Monitor Service endpoints using TLS, you must perform the following co
 
 1.  From any Delivery Controller in the Site, run the following PowerShell commands once. This removes the Monitor Service registration with the Configuration Service.
 
-    ```
-    asnp citrix.\*
+```
+asnp citrix.\*
 
-    \$serviceGroup = get-configregisteredserviceinstance -servicetype
-    Monitor | Select -First 1 ServiceGroupUid
+\$serviceGroup = get-configregisteredserviceinstance -servicetype
+Monitor | Select -First 1 ServiceGroupUid
 
-    remove-configserviceGroup -ServiceGroupUid
-    \$serviceGroup.ServiceGroupUid
-    ```
+remove-configserviceGroup -ServiceGroupUid
+\$serviceGroup.ServiceGroupUid
+```
 
 1.  Do the following on all Controllers in the Site:
 
     -  Using a cmd prompt, locate the installed Citrix Monitor directory (typically in C:\\Program Files\\Citrix\\Monitor\\Service). Within that directory run:
 
-    ```
-    Citrix.Monitor.Exe -CONFIGUREFIREWALL -ODataPort 449 -RequireODataSsl
-    ```
+```
+Citrix.Monitor.Exe -CONFIGUREFIREWALL -ODataPort 449 -RequireODataSsl
+```
   
     -  Run the following PowerShell commands:
 
