@@ -364,3 +364,4 @@ System.out.println(qList.first().toString());
 |`http://{dc-host}/Citrix/Monitor/OData/v4/Data/ProbeEndpoints`| Machines running Citrix Probe Agent to probe applications in the Site|
 |`http://{dc-host}/Citrix/Monitor/OData/v4/Data/ProbeLogs`| Results of probes run per application|
 |`http://{dc-host}/Citrix/Monitor/OData/v4/Data/ProbeResults`| Results of probes run (with failure stage) per application|
+|`http://{dc-host}/Citrix/monitor/odata/v4/data/LogOnMetrics`| Timestamps related to Interactive Session breakdown|
