@@ -65,20 +65,20 @@ permissions, see [Delegated Administration](http://docs.citrix.com/en-us/xenapp-
 ## Data Access Security
 
 If you choose to use TLS, you must configure TLS on all Delivery Controllers in the Site; you cannot use a mixture of TLS and non-TLS.
-TLS 1.2 or later is supported. 
+Minimum supported TLS protocol version is TLS 1.2. 
 
 To enforce the usage of TLS 1.2, set the SchUseStrongCrypto registry key as follows.
 
 Caution: Using Registry Editor incorrectly can cause serious problems that might require you to reinstall your operating system. Citrix cannot guarantee that problems resulting from the incorrect use of Registry Editor can be solved. Use Registry Editor at your own risk. Citrix recommends that you back up Windows Registry before changing it.
 
-Save below code to forceTLS1.2.reg and run it:
-```
-Windows Registry Editor Version 5.00
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v4.0.30319]
-"SchUseStrongCrypto"=dword:00000001
-[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\.NETFramework\v4.0.30319]
-"SchUseStrongCrypto"=dword:00000001
-```
+Save below code to force TLS1.2.reg and run it:
+    ```
+    Windows Registry Editor Version 5.00
+    [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v4.0.30319]
+    "SchUseStrongCrypto"=dword:00000001
+    [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\.NETFramework\v4.0.30319]
+    "SchUseStrongCrypto"=dword:00000001
+    ```
 To secure Monitor Service endpoints using TLS, you must perform the following configuration. Some steps need to be done only once per Site, others must be run from every machine hosting the Monitor Service in the Site. The steps are described below.
 
 ***Part 1: Certificate registration with the system***
