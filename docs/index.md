@@ -65,7 +65,20 @@ permissions, see [Delegated Administration](http://docs.citrix.com/en-us/xenapp-
 ## Data Access Security
 
 If you choose to use TLS, you must configure TLS on all Delivery Controllers in the Site; you cannot use a mixture of TLS and non-TLS.
+TLS 1.2 or later is supported. 
 
+To enforce the usage of TLS 1.2, set the SchUseStrongCrypto registry key as follows.
+
+Caution: Using Registry Editor incorrectly can cause serious problems that might require you to reinstall your operating system. Citrix cannot guarantee that problems resulting from the incorrect use of Registry Editor can be solved. Use Registry Editor at your own risk. Citrix recommends that you back up Windows Registry before changing it.
+
+Save below code to forceTLS1.2.reg and run it:
+```
+Windows Registry Editor Version 5.00
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v4.0.30319]
+"SchUseStrongCrypto"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\.NETFramework\v4.0.30319]
+"SchUseStrongCrypto"=dword:00000001
+```
 To secure Monitor Service endpoints using TLS, you must perform the following configuration. Some steps need to be done only once per Site, others must be run from every machine hosting the Monitor Service in the Site. The steps are described below.
 
 ***Part 1: Certificate registration with the system***
@@ -89,23 +102,23 @@ appid='{00000000-0000-0000-0000-000000000000}'
 
 1.  From any Delivery Controller in the Site, run the following PowerShell commands once. This removes the Monitor Service registration with the Configuration Service.
 
-```
-asnp citrix.\*
+    ```
+    asnp citrix.\*
 
-\$serviceGroup = get-configregisteredserviceinstance -servicetype
-Monitor | Select -First 1 ServiceGroupUid
+    \$serviceGroup = get-configregisteredserviceinstance -servicetype
+    Monitor | Select -First 1 ServiceGroupUid
 
-remove-configserviceGroup -ServiceGroupUid
-\$serviceGroup.ServiceGroupUid
-```
+    remove-configserviceGroup -ServiceGroupUid
+    \$serviceGroup.ServiceGroupUid
+    ```
 
 1.  Do the following on all Controllers in the Site:
 
     -  Using a cmd prompt, locate the installed Citrix Monitor directory (typically in C:\\Program Files\\Citrix\\Monitor\\Service). Within that directory run:
 
-```
-Citrix.Monitor.Exe -CONFIGUREFIREWALL -ODataPort 449 -RequireODataSsl
-```
+    ```
+    Citrix.Monitor.Exe -CONFIGUREFIREWALL -ODataPort 449 -RequireODataSsl
+    ```
   
     -  Run the following PowerShell commands:
 
@@ -181,7 +194,7 @@ The following examples show how to export Monitor Service data using the OData A
 
 1.  Select the tables you want to import into Excel and click **Finish**. The data is retrieved.
 
-### Using Excel 2013
+### Access using Excel 2013
 
 1.  Click the Data tab.
 
@@ -198,13 +211,13 @@ The following examples show how to export Monitor Service data using the OData A
 
 You can now use PowerPivot to view and analyze the data with PivotTables and PivotCharts. For more information, see the Learning Center: <http://www.microsoft.com/en-us/bi/LearningCenter.aspx>
 
-## Access using LinqPad
+### Access using LinqPad
 
 1.  Download and install the latest version of LinqPad from [http://www.linqpad.net](http://www.linqpad.net/).
 
 1.  Run LinqPad with the appropriate administrative permissions for the XenApp and XenDesktop Site.
 
-> Tip: the easiest way is to download, install and run on the Delivery Controller.
+    > Tip: the easiest way is to download, install and run on the Delivery Controller.
 
 1.  Click the Add connection link.
 
@@ -216,11 +229,11 @@ You can now use PowerPivot to view and analyze the data with PivotTables and Piv
 
 1.  You can now run LINQ queries against the data feed and export the data as needed. For example, right-click Catalogs and choose **Catalogs.Take(100)**. This returns the first 100 Catalogs in the database. Choose Export&gt;Export to Excel with formatting.
 
-## Access using Client Library
+### Access using Client Library
 
 Currently Citrix Monitor Service supports OData protocol V3 and V4. So, when implement the OData consumers with various programming platforms, please select correct client libraries.
 
-### Using C\#/.NET
+#### Access using C\#/.NET
 
 ***Calling an OData Service From a .NET Client (C\#)***
 
@@ -286,7 +299,7 @@ Code Fragment:
     }
 ```
 
-### Using Java
+#### Access using Java
 
 **Calling an OData Service from a Java Client based on Odata4j v0.3 library:**
 
