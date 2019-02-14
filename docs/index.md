@@ -69,16 +69,16 @@ Minimum supported TLS protocol version is TLS 1.2.
 
 To enforce the usage of TLS 1.2, set the SchUseStrongCrypto registry key as follows.
 
-Caution: Using Registry Editor incorrectly can cause serious problems that might require you to reinstall your operating system. Citrix cannot guarantee that problems resulting from the incorrect use of Registry Editor can be solved. Use Registry Editor at your own risk. Citrix recommends that you back up Windows Registry before changing it.
+**Caution:** Using Registry Editor incorrectly can cause serious problems that might require you to reinstall your operating system. Citrix cannot guarantee that problems resulting from the incorrect use of Registry Editor can be solved. Use Registry Editor at your own risk. Citrix recommends that you back up Windows Registry before changing it.
 
-Save below code to force TLS1.2.reg and run it:
-    ```
-    Windows Registry Editor Version 5.00
-    [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v4.0.30319]
-    "SchUseStrongCrypto"=dword:00000001
-    [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\.NETFramework\v4.0.30319]
-    "SchUseStrongCrypto"=dword:00000001
-    ```
+Save below code to forceTLS1.2.reg and run it:
+```
+Windows Registry Editor Version 5.00
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v4.0.30319]
+"SchUseStrongCrypto"=dword:00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\.NETFramework\v4.0.30319]
+"SchUseStrongCrypto"=dword:00000001
+```
 To secure Monitor Service endpoints using TLS, you must perform the following configuration. Some steps need to be done only once per Site, others must be run from every machine hosting the Monitor Service in the Site. The steps are described below.
 
 ***Part 1: Certificate registration with the system***
@@ -102,34 +102,34 @@ appid='{00000000-0000-0000-0000-000000000000}'
 
 1.  From any Delivery Controller in the Site, run the following PowerShell commands once. This removes the Monitor Service registration with the Configuration Service.
 
-    ```
-    asnp citrix.\*
+```
+asnp citrix.\*
 
-    \$serviceGroup = get-configregisteredserviceinstance -servicetype
-    Monitor | Select -First 1 ServiceGroupUid
+\$serviceGroup = get-configregisteredserviceinstance -servicetype
+Monitor | Select -First 1 ServiceGroupUid
 
-    remove-configserviceGroup -ServiceGroupUid
-    \$serviceGroup.ServiceGroupUid
-    ```
+remove-configserviceGroup -ServiceGroupUid
+\$serviceGroup.ServiceGroupUid
+```
 
 1.  Do the following on all Controllers in the Site:
 
     -  Using a cmd prompt, locate the installed Citrix Monitor directory (typically in C:\\Program Files\\Citrix\\Monitor\\Service). Within that directory run:
 
-    ```
-    Citrix.Monitor.Exe -CONFIGUREFIREWALL -ODataPort 449 -RequireODataSsl
-    ```
+ ```
+ Citrix.Monitor.Exe -CONFIGUREFIREWALL -ODataPort 449 -RequireODataSsl
+ ```
   
-    -  Run the following PowerShell commands:
+   -  Run the following PowerShell commands:
 
-    ```
-    asnp citrix.\* (if not already run within this window)
+```
+asnp citrix.\* (if not already run within this window)
 
-    get-MonitorServiceInstance | register-ConfigServiceInstance
+get-MonitorServiceInstance | register-ConfigServiceInstance
 
-    Get-ConfigRegisteredServiceInstance -ServiceType Config |
-    Reset-MonitorServiceGroupMembership
-    ```
+Get-ConfigRegisteredServiceInstance -ServiceType Config |
+Reset-MonitorServiceGroupMembership
+```
 
 ## Data Access Protocol
 
@@ -141,7 +141,7 @@ The query is processed on the server side and can be filtered further using the 
 
 The data modeled falls into three categories: aggregate data (the summary tables), current state of objects (machines, sessions, etc.), and log data, which is really historical events (connections, for example).
 
-**Note**: Enums are not supported in the OData protocol; integers are used in their place. To determine the values returned by the Monitor Service OData API, see [Monitor Service Data Model](./api-reference/Monitor.Model.md).
+**Note:** Enums are not supported in the OData protocol; integers are used in their place. To determine the values returned by the Monitor Service OData API, see [Monitor Service Data Model](./api-reference/Monitor.Model.md).
 
 ### What is OData Protocol?
 
