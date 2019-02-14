@@ -72,6 +72,7 @@ To enforce the usage of TLS 1.2, set the SchUseStrongCrypto registry key as foll
 **Caution:** Using Registry Editor incorrectly can cause serious problems that might require you to reinstall your operating system. Citrix cannot guarantee that problems resulting from the incorrect use of Registry Editor can be solved. Use Registry Editor at your own risk. Citrix recommends that you back up Windows Registry before changing it.
 
 Save below code to forceTLS1.2.reg and run it:
+
 ```
 Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v4.0.30319]
@@ -79,16 +80,14 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\.NETFramework\v4.0.30319]
 "SchUseStrongCrypto"=dword:00000001
 ```
+
 To secure Monitor Service endpoints using TLS, you must perform the following configuration. Some steps need to be done only once per Site, others must be run from every machine hosting the Monitor Service in the Site. The steps are described below.
 
 ***Part 1: Certificate registration with the system***
 
 1.  Create a certificate using a trusted certificate manager. The certificate must be associated with the port on the machine that you wish to use for OData TLS.
-
 1.  Configure the Monitor Service to use this port for TLS communication. The steps depend on your environment and how this works with certificates. The following example shows how to configure port 443:
-
 -  Associate the certificate with a port:
-
 ```
 netsh http add sslcert ipport=0.0.0.0:443
 certhash=97bb629e50d556c80528f4991721ad4f28fb74e9
@@ -100,36 +99,26 @@ appid='{00000000-0000-0000-0000-000000000000}'
 
 ***Part 2: Modify the Monitor Service configuration settings***
 
-1.  From any Delivery Controller in the Site, run the following PowerShell commands once. This removes the Monitor Service registration with the Configuration Service.
-
-```
-asnp citrix.\*
-
-\$serviceGroup = get-configregisteredserviceinstance -servicetype
-Monitor | Select -First 1 ServiceGroupUid
-
-remove-configserviceGroup -ServiceGroupUid
-\$serviceGroup.ServiceGroupUid
-```
-
+1. From any Delivery Controller in the Site, run the following PowerShell commands once. This removes the Monitor Service registration with the Configuration Service.    
+    ```
+    asnp citrix.\*
+    \$serviceGroup = get-configregisteredserviceinstance -servicetype
+    Monitor | Select -First 1 ServiceGroupUid
+    remove-configserviceGroup -ServiceGroupUid
+    \$serviceGroup.ServiceGroupUid
+    ```
 1.  Do the following on all Controllers in the Site:
-
     -  Using a cmd prompt, locate the installed Citrix Monitor directory (typically in C:\\Program Files\\Citrix\\Monitor\\Service). Within that directory run:
-
- ```
- Citrix.Monitor.Exe -CONFIGUREFIREWALL -ODataPort 449 -RequireODataSsl
- ```
-  
-   -  Run the following PowerShell commands:
-
-```
-asnp citrix.\* (if not already run within this window)
-
-get-MonitorServiceInstance | register-ConfigServiceInstance
-
-Get-ConfigRegisteredServiceInstance -ServiceType Config |
-Reset-MonitorServiceGroupMembership
-```
+    ```
+    Citrix.Monitor.Exe -CONFIGUREFIREWALL -ODataPort 449 -RequireODataSsl
+    ```
+    - Run the following PowerShell commands:
+    ```
+    asnp citrix.\* (if not already run within this window)
+    get-MonitorServiceInstance | register-ConfigServiceInstance
+    Get-ConfigRegisteredServiceInstance -ServiceType Config |
+    Reset-MonitorServiceGroupMembership
+    ```
 
 ## Data Access Protocol
 
