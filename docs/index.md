@@ -67,7 +67,7 @@ permissions, see [Delegated Administration](http://docs.citrix.com/en-us/xenapp-
 If you choose to use TLS, you must configure TLS on all Delivery Controllers in the Site; you cannot use a mixture of TLS and non-TLS.
 To improve the security of the Citrix Virtual Apps and Desktops service, Citrix will block any communication over Transport Layer Security (TLS) 1.0 and 1.1 as of March 15, 2019, allowing only TLS 1.2 communications. 
 
-To enforce the usage of TLS 1.2, set the SchUseStrongCrypto registry key as follows as described in the Knowledge Center article  [CTX245765](https://support.citrix.com/article/CTX245765)
+To enforce the usage of TLS 1.2, update the registry as described in the Knowledge Center article  [CTX245765](https://support.citrix.com/article/CTX245765)
 
 To secure Monitor Service endpoints using TLS, you must perform the following configuration. Some steps need to be done only once per Site, others must be run from every machine hosting the Monitor Service in the Site. The steps are described below.
 
