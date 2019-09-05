@@ -45,7 +45,7 @@ The following types of data are available through the Monitor Service API:
 
 ## Monitor Service Schema
 
-For the details of the Monitor Service schema, please refer to: [Monitor Service Schema](./api-schema.png)
+For the details of the Monitor Service schema, please refer to: [Monitor Service Schema](./api-schema.pdf)
 
 To determine the values returned by the Monitor Service OData API, see: [Citrix Monitor Data Model](./api-reference/Monitor.Model.md)
 
