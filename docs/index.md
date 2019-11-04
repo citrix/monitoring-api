@@ -65,7 +65,7 @@ permissions, see [Delegated Administration](http://docs.citrix.com/en-us/xenapp-
 ## Data Access Security
 
 If you choose to use TLS, you must configure TLS on all Delivery Controllers in the Site; you cannot use a mixture of TLS and non-TLS.
-To improve the security of the Citrix Virtual Apps and Desktops service, Citrix will block any communication over Transport Layer Security (TLS) 1.0 and 1.1 as of March 15, 2019, allowing only TLS 1.2 communications. 
+To improve the security of the Citrix Virtual Apps and Desktops service, Citrix will block any communication over Transport Layer Security (TLS) 1.0 and 1.1 as of March 15, 2019, allowing only TLS 1.2 communications.
 
 To enforce the usage of TLS 1.2, update the registry as described in the Knowledge Center article  [CTX245765](https://support.citrix.com/article/CTX245765)
 
@@ -87,7 +87,7 @@ appid='{00000000-0000-0000-0000-000000000000}'
 
 ***Part 2: Modify the Monitor Service configuration settings***
 
-1. From any Delivery Controller in the Site, run the following PowerShell commands once. This removes the Monitor Service registration with the Configuration Service.    
+1. From any Delivery Controller in the Site, run the following PowerShell commands once. This removes the Monitor Service registration with the Configuration Service.
     ```
     asnp citrix.\*
     \$serviceGroup = get-configregisteredserviceinstance -servicetype
@@ -327,6 +327,29 @@ System.out.println(qList.first().toString());
 /* GET http://{dc-host}/Citrix/Monitor/Odata/v4/Machines()?$filter=Name eq '$Name'*/
 qList = consumer.getEntities(entitySetName).filter("Name eq 'DOMAIN\\HOSTNAME'").execute();
 System.out.println(qList.first().toString());
+```
+
+#### OData Pagination
+
+The following PowerShell script fetches applications in batches of 100 records using Citrix Cloud authentication following the **@odata.nextLink** property in the response.
+
+```powershell
+$customerId = "[customerid]"
+$api = "https://$customerId.xendesktop.net/citrix/monitor/odata/v4/data"
+$endpoint = "$api/Applications"
+
+$bearer = "CWSAuth bearer=[token]"
+$headers = @{'Customer'=$customerId;'Authorization'=$bearer}
+
+$results = Invoke-RestMethod $endpoint -Headers $headers -Verbose
+Write-Host “Number of items returned in the first call : ”, $results.value.Count
+
+while($results.'@odata.nextLink' -ne $null)
+{
+    $results = Invoke-RestMethod $results.'@odata.nextLink' -Headers $headers -Verbose
+    Write-Host “Number of items returned in next call : ”, $results.value.Count
+}
+
 ```
 
 ## Appendix
