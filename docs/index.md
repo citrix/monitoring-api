@@ -45,7 +45,70 @@ The following types of data are available through the Monitor Service API:
 
 ## Monitor Service Schema
 
-For the details of the Monitor Service schema, please refer to: [Monitor Service Schema](./api-schema.pdf)
+For the details of the Monitor Service schema, please refer to the [Monitor Service Schema](./api-schema.pdf) diagram.
+
+The single page Monitor Service Schema diagram mentioned above is divided into the following four categories. Each contains subcategories, related tables, descriptions, and their respective database schema diagrams.
+
+[Resource utilization](#resource-utilization)
+
+[Session and application usage](#session-and-application-usage)
+
+[Process utilization within sessions](#process-utilization-within-sessions)
+
+[Failures](#failures)
+
+[Database schema diagrams](#database-schema-diagrams)
+
+### Resource utilization
+
+| Subcategory | Related tables | Description | Collection Details |
+| --- | --- | --- | --- |
+| Single machine related | Machine | Indicates the details related to a specific machine. | Raw data |
+|   | MachineMetrics | Indicates metrics such as IOPS and latency for every hour for a particular machine. | Raw data |
+|   | ResourceUtilization | Indicates the utilization details of a machine. For example, CPU, memory, session count, and so on. | Raw data |
+| Single machine consolidated data | MachineMetricDaySummaries | Indicates the consolidated data per day for machine metrics. | Day |
+|   | ResourceUtilizationSummaries | Indicates the average of all metrics over time. | Hour, Day |
+|   | ServerOSDesktopSummary | Indicates the details related to usage duration and total launch count on multi-session machines. | Minute, Hour, Day |
+|   | DesktopOSDesktopSummary | Indicates the details related to usage duration and total launch count on single-session machines. | Minute, Hour, Day |
+| Consolidated data across machines in a desktop group. | MachineSummary | Indicates the total number of powered-on machines, registered machines, machines in maintenance mode, and so on under a desktop group. | Hour, Day |
+
+### Session and application usage
+
+| Subcategory | Related tables | Description | Collection Details |
+| --- | --- | --- | --- |
+| Application related | ApplicationInstanceSummary | Indicates the details related to the total launch count on the application, usage duration, and so on. | Hour, Day |
+| Session related | SessionActivitySummary | Indicates the details related to total connected and disconnected sessions, total logons, and so on. | Hour, Day |
+|   | SessionMetric | Indicates the ICARTT duration for that session. | Raw data |
+|   | LogOnMetric | Indicates the details related to sessions' UserInit start and end date. | Raw data |
+
+### Process utilization within sessions
+
+| Subcategory | Related tables | Description | Collection Details |
+| --- | --- | --- | --- |
+| Process | ProcessUtilization | Indicates the CPU and memory consumption in a session. | Raw data |
+|   | ProcessUtilizationMinuteSummary | Indicates the minute-level summary on a process. | Minute |
+|   | ProcessUtilizationHourSummary | Indicates the hour-level summary on a process. | Hour |
+|   | ProcessUtilizationDaySummary | Indicates the day-level summary on a process. | Day |
+
+### Failures
+
+| Subcategory | Related tables | Description | Collection Details |
+| --- | --- | --- | --- |
+| Application related | ApplicationError | Indicates a problem that is not immediately relevant. Signifies conditions that might cause future problems.   | Raw |
+|   | ApplicationFault | Indicates a significant problem, usually a loss of functionality or data.  | Raw data |
+| Session Related | ConnectionFailureLog | Indicates the reasons for failure of the session along with the date. | Raw data |
+|   | FailureLogSumamary | Indicates details related to the number of failures within each failure category under a desktop group. | Hour, Day |
+| Machine related | MachineFailureLog | Indicates the reasons for deregistration and fault state. | Raw data |
+
+### Database schema diagrams
+
+-  [Resource utilization database schema](./Resource_Utilization.pdf)
+
+-  [Session and application usage database schema](./Session_and_Application_usage.pdf)
+
+-  [Process utilization within session database schema](./Process_Utilization.pdf)
+
+-  [Failures database schema](./Failures.pdf)
 
 To determine the values returned by the Monitor Service OData API, see: [Citrix Monitor Data Model](./api-reference/Monitor.Model.md)
 
@@ -65,7 +128,7 @@ permissions, see [Delegated Administration](http://docs.citrix.com/en-us/xenapp-
 ## Data Access Security
 
 If you choose to use TLS, you must configure TLS on all Delivery Controllers in the Site; you cannot use a mixture of TLS and non-TLS.
-To improve the security of the Citrix Virtual Apps and Desktops service, Citrix will block any communication over Transport Layer Security (TLS) 1.0 and 1.1 as of March 15, 2019, allowing only TLS 1.2 communications. 
+To improve the security of the Citrix Virtual Apps and Desktops service, Citrix will block any communication over Transport Layer Security (TLS) 1.0 and 1.1 as of March 15, 2019, allowing only TLS 1.2 communications.
 
 To enforce the usage of TLS 1.2, update the registry as described in the Knowledge Center article  [CTX245765](https://support.citrix.com/article/CTX245765)
 
@@ -87,7 +150,7 @@ appid='{00000000-0000-0000-0000-000000000000}'
 
 ***Part 2: Modify the Monitor Service configuration settings***
 
-1. From any Delivery Controller in the Site, run the following PowerShell commands once. This removes the Monitor Service registration with the Configuration Service.    
+1. From any Delivery Controller in the Site, run the following PowerShell commands once. This removes the Monitor Service registration with the Configuration Service.
     ```
     asnp citrix.\*
     \$serviceGroup = get-configregisteredserviceinstance -servicetype
