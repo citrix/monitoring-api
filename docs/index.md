@@ -94,7 +94,7 @@ The single page Monitor Service Schema diagram mentioned above is divided into t
 
 | Subcategory | Related tables | Description | Collection Details |
 | --- | --- | --- | --- |
-| Application related | ApplicationError | Indicates a problem that is not immediately relevant. Signifies conditions that might cause future problems.   | Raw |
+| Application related | ApplicationError | Indicates a problem that is not immediately relevant. Signifies conditions that might cause future problems.   | Raw Data |
 |   | ApplicationFault | Indicates a significant problem, usually a loss of functionality or data.  | Raw data |
 | Session Related | ConnectionFailureLog | Indicates the reasons for failure of the session along with the date. | Raw data |
 |   | FailureLogSumamary | Indicates details related to the number of failures within each failure category under a desktop group. | Hour, Day |
