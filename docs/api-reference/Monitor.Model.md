@@ -864,46 +864,6 @@ Average Latency on the machine for given SummaryDate
 ####Constructor
 Initializes a new instance of the MachineMetricDaySummary class.
 
-##Monitor.Model.MachineSummary
-Represents machine data collected every hour and rollup/summary per day. Data is aggregated for the time period during which monitoring service is up.
-
-###Properties
-
-####Id
-
-####Unique identifier
-
-####SummaryDate
-Time stamp associated with this summary data.
-
-####DesktopGroupId
-Guid of Desktop Group this summary is associated with.
-
-####DesktopGroup
-Desktop Group this summary is associated with.
-
-####PoweredOnMachinesCount
-Number of powered-on machines(only power managed machines) for this Desktop Group at the time of consolidation
-
-####RegisteredMachinesCount
-Number of registered machines for this Desktop Group at the time of consolidation
-
-####MachinesInMaintenanceModeCount
-Number of machines in maintenance mode for this Desktop Group at the time of consolidation
-
-####MachinesCount
-Number of machines in this Desktop Group at the time of consolidation
-
-####Granularity
-Granularity of this summary item in minutes Size of the time windows in minutes for this summary.
-
-###Methods
-
-
-####Constructor
-Initializes a new instance of the MachineSummary class.
-
-
 ##Monitor.Model.ProcessInfoBulkInsertModel
             
 Represents a process utilization statistics of a particular process on a machine.

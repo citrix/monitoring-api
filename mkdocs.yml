@@ -1,5 +1,5 @@
-site_name: Citrix Monitor API Reference     
-site_description:  Citrix Monitor API Reference
+site_name: Citrix Monitor API 7.15 LTSR Reference     
+site_description:  Citrix Monitor API 7.15 LTSR Reference
 site_title: Developer Docs
 site_author:
 site_url: 
@@ -62,6 +62,8 @@ markdown_extensions:
 
 # Page tree
 nav:
+- Versions:
+  - latest: https://developer-docs.citrix.com/projects/monitor-service-odata-api/en/latest/
 - Monitor API: index.md
 - API reference:
   - Monitor.Model: api-reference/Monitor.Model.md
