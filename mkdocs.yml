@@ -62,7 +62,10 @@ markdown_extensions:
 
 # Page tree
 nav:
+- Versions: 
+  - 7.15 LTSR: https://developer-docs.citrix.com/projects/monitor-service-odata-api/en/7.15-ltsr/
 - Monitor API: index.md
 - API reference:
   - Monitor.Model: api-reference/Monitor.Model.md
   - Monitor.Notifications: api-reference/Monitor.Notifications.md
+- Questions?: https://discussions.citrix.com/forum/1385-citrix-developer-exchange/
