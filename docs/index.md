@@ -331,26 +331,25 @@ System.out.println(qList.first().toString());
 qList = consumer.getEntities(entitySetName).filter("Name eq 'DOMAIN\\HOSTNAME'").execute();
 System.out.println(qList.first().toString());
 ```
- 
 
-#Appendix
+# Appendix
 
-##URLs for Available Data Sets
+## URLs for Available Data Sets
 
-| URL         | Description   |                                                                             
-|-------|--------|
-| http://{dc-host}/Citrix/Monitor/OData/v1/Data/Catalogs                    | Catalog images in the site                                                                      |
-| http://{dc-host}/Citrix/Monitor/OData/v1/Data/ConnectionFailureCategories | Grouping for connection failure types                                                           |
-| http://{dc-host}/Citrix/Monitor/OData/v1/Data/ConnectionFailureLogs       | Log of each connection failure in the site                                                      |
-| http://{dc-host}/Citrix/Monitor/OData/v1/Data/Connections                 | Represents an initial connection or reconnect for a session                                     |
-| http://{dc-host}/Citrix/Monitor/OData/v1/Data/DesktopGroups               | Delivery Groups in the site                                                                     |
-| http://{dc-host}/Citrix/Monitor/OData/v1/Data/FailureLogSummaries         | Failures (connection/machine) counts by time period and Delivery Group                          |
-| http://{dc-host}/Citrix/Monitor/OData/v1/Data/Hypervisors                 | Hosts (hypervisors) in the site                                                                 |
-| http://{dc-host}/Citrix/Monitor/OData/v1/Data/LoadIndexes                 | Load Index data received from the Virtual Delivery Agent (VDA)                                  |
-| http://{dc-host}/Citrix/Monitor/OData/v1/Data/LoadIndexSummaries          | Load Index averages by time period and machine                                                  |
-| http://{dc-host}/Citrix/Monitor/OData/v1/Data/MachineFailureLogs          | Log of each machine failure by start and end date in the site                                   |
-| http://{dc-host}/Citrix/Monitor/OData/v1/Data/Machines                    | Machines in the site                                                                            |
-| http://{dc-host}/Citrix/Monitor/OData/v1/Data/SessionActivitySummaries    | Session counts and logon data by time period and delivery group                                 |
-| http://{dc-host}/Citrix/Monitor/OData/v1/Data/Sessions                    | Represents a user connected to a desktop                                                        |
-| http://{dc-host}/Citrix/Monitor/OData/v1/Data/TaskLogs                    | Log of all tasks and their status that have been run as part of the internal Monitoring Service |
-| http://{dc-host}/Citrix/Monitor/OData/v1/Data/Users                       | Users that have launched a session in the site                                                  |
+| URL | Description |
+|---|---|
+| <http://{dc-host}/Citrix/Monitor/OData/v1/Data/Catalogs> | Catalog images in the site |
+| <http://{dc-host}/Citrix/Monitor/OData/v1/Data/ConnectionFailureCategories> | Grouping for connection failure types |
+| <http://{dc-host}/Citrix/Monitor/OData/v1/Data/ConnectionFailureLogs> | Log of each connection failure in the site |
+| <http://{dc-host}/Citrix/Monitor/OData/v1/Data/Connections> | Represents an initial connection or reconnect for a session |
+| <http://{dc-host}/Citrix/Monitor/OData/v1/Data/DesktopGroups> | Delivery Groups in the site |
+| <http://{dc-host}/Citrix/Monitor/OData/v1/Data/FailureLogSummaries> | Failures (connection/machine) counts by time period and Delivery Group |
+| <http://{dc-host}/Citrix/Monitor/OData/v1/Data/Hypervisors> | Hosts (hypervisors) in the site |
+| <http://{dc-host}/Citrix/Monitor/OData/v1/Data/LoadIndexes> | Load Index data received from the Virtual Delivery Agent (VDA) |
+| <http://{dc-host}/Citrix/Monitor/OData/v1/Data/LoadIndexSummaries> | Load Index averages by time period and machine |
+| <http://{dc-host}/Citrix/Monitor/OData/v1/Data/MachineFailureLogs> | Log of each machine failure by start and end date in the site |
+| <http://{dc-host}/Citrix/Monitor/OData/v1/Data/Machines> | Machines in the site |
+| <http://{dc-host}/Citrix/Monitor/OData/v1/Data/SessionActivitySummaries> | Session counts and logon data by time period and delivery group |
+| <http://{dc-host}/Citrix/Monitor/OData/v1/Data/Sessions> | Represents a user connected to a desktop |
+| <http://{dc-host}/Citrix/Monitor/OData/v1/Data/TaskLogs> | Log of all tasks and their status that have been run as part of the internal Monitoring Service |
+| <http://{dc-host}/Citrix/Monitor/OData/v1/Data/Users> | Users that have launched a session in the site |
