@@ -34,7 +34,7 @@ The following types of data are available through the Monitor Service API:
 
 -   Hosted application usage
 
-For the details of the Monitor Service schema, please refer to: [Monitor Service Schema](http://docs.citrix.com/en-us/xenapp-and-xendesktop/7-5/cds-ms-odata-wrapper/cds-ms-odata-data.html).
+For the details of the Monitor Service schema, please refer to: [Monitor Service Schema](https://developer-docs.citrix.com/projects/monitor-service-odata-api/en/7.15-ltsr/api-schema.png).
 
 To determine the values returned by the Monitor Service OData API, see: [Citrix Monitor Data Model](http://support.citrix.com/help/monitorserviceapi/7.6/html/d787ce1d-02c0-6165-fc99-c46592a5d112.htm)
 
