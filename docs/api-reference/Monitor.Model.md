@@ -2,18 +2,18 @@
 
 
 ##Monitor.Model.TableInfoAttribute
-            
 
-        
+
+
 ###Properties
 
 ####Name
 
 
 ##Monitor.Model.Enums.ApplicationErrorSortBy
-            
+
 ApplicationErrorSortBy
-        
+
 ###Fields
 
 ####Unknown
@@ -22,9 +22,9 @@ Unknown value for sort field
 Time at which error occurred
 
 ##Monitor.Model.Enums.ApplicationFaultSortBy
-            
+
 ApplicationFaultSortBy
-        
+
 ###Fields
 
 ####Unknown
@@ -33,9 +33,9 @@ Unknown value for sort field
 Time at which fault occurred
 
 ##Monitor.Model.Enums.ApplicationUsageSortBy
-            
+
 DesktopUsageSortBy
-        
+
 ###Fields
 
 ####Unknown
@@ -56,9 +56,9 @@ DistinctUsers
 ApplicationFolder
 
 ##Monitor.Model.Enums.ApplicationInstanceSortBy
-            
+
 ResourceUsageSortBy
-        
+
 ###Fields
 
 ####Unknown
@@ -75,9 +75,9 @@ SessionState
 Session idle time since
 
 ##Monitor.Model.Enums.LogOnDetailsSortBy
-            
+
 DesktopUsageSortBy
-        
+
 ###Fields
 
 ####Unknown
@@ -110,9 +110,9 @@ InteractiveSessions
 TotalLogOnDuration
 
 ##Monitor.Model.Enums.NotificationGroupState
-            
+
 What state is the notification group in?
-        
+
 ###Fields
 
 ####Enabled
@@ -123,9 +123,9 @@ Object was disabled
 Object was deleted
 
 ##Monitor.Model.Enums.NotificationHistorySortBy
-            
+
 NotificationHistorySortBy enum
-        
+
 ###Fields
 
 ####Unknown
@@ -136,9 +136,9 @@ Time
 Severity
 
 ##Monitor.Model.Enums.NotificationSummarySortBy
-            
+
 NotificationSummarySortBy
-        
+
 ###Fields
 
 ####Unknown
@@ -165,9 +165,9 @@ SourceType
 Category
 
 ##Monitor.Model.Enums.NotificationSummaryState
-            
+
 Notification summary state
-        
+
 ###Fields
 
 ####Unknown
@@ -182,9 +182,9 @@ Healthy state
 Dismissed state
 
 ##Monitor.Model.Enums.ProcessUsageSortBy
-            
+
 ProcessUsageSortBy
-        
+
 ###Fields
 
 ####Unknown
@@ -201,9 +201,9 @@ AverageMemoryUtilization
 MemoryUtilizationPeak
 
 ##Monitor.Model.Enums.ResourceUsageSortBy
-            
+
 ResourceUsageSortBy
-        
+
 ###Fields
 
 ####Unknown
@@ -222,9 +222,9 @@ AverageMemoryUtilization
 MemoryUtilizationPeak
 
 ##Monitor.Model.Enums.NotificationLifecycle
-            
+
 Is it Dismissed or Active?
-        
+
 ###Fields
 
 ####Unknown
@@ -237,9 +237,9 @@ Notification is dismissed
 No longer active
 
 ##Monitor.Model.Enums.ApplicationType
-            
+
 Set of application type values denoting how an application is hosted
-        
+
 ###Fields
 
 ####HostedOnDesktop
@@ -248,9 +248,9 @@ The application is hosted from a desktop.
 The application is installed on a client.
 
 ##Monitor.Model.Enums.DeliveryType
-            
+
 Specifies whether desktops, applications, or both, can be delivered from machines contained within the new desktop group. Desktop groups with a DesktopKind of Private cannot be used to deliver both desktops and applications. Defaults to DesktopsOnly if not specified.
-        
+
 ###Fields
 
 ####DesktopsOnly
@@ -261,9 +261,9 @@ Only applications are published.
 Both desktops and applications are published.
 
 ##Monitor.Model.Enums.DesktopType
-            
+
 Specifies whether desktops, applications, or both, can be delivered from machines contained within the new desktop group. Desktop groups with a DesktopKind of Private cannot be used to deliver both desktops and applications. Defaults to DesktopsOnly if not specified.
-        
+
 ###Fields
 
 ####None
@@ -278,9 +278,9 @@ VM Hosted RDS
 unknown type
 
 ##Monitor.Model.Enums.DesktopUsageSortBy
-            
+
 DesktopUsageSortBy
-        
+
 ###Fields
 
 ####Unknown
@@ -305,9 +305,9 @@ AverageDesktopUsageInHours
 DistinctUsers.
 
 ##Monitor.Model.Enums.HotfixChangeType
-            
+
 Enum to determine whether a hotfix was added or removed.
-        
+
 ###Fields
 
 ####Add
@@ -316,9 +316,9 @@ Added
 Removed
 
 ##Monitor.Model.Enums.MachineRole
-            
+
 Enum to determine where machine is VDA or DDC
-        
+
 ###Fields
 
 ####Vda
@@ -329,9 +329,9 @@ Ddc machine
 Machine acting as VDA and DDC
 
 ##Monitor.Model.Enums.NotificationRulePriorityType
-            
+
 datatype of the NotificationRulePriorityType
-        
+
 ###Fields
 
 ####Alarm
@@ -340,9 +340,9 @@ datatype of the NotificationRulePriorityType
 
 
 ##Monitor.Model.Enums.SessionDetailsSortBy
-            
+
 SessionDetailsSortBy enum
-        
+
 ###Fields
 
 ####Unknown
@@ -359,9 +359,9 @@ Session StartDate
 Session EndDate
 
 ##Monitor.Model.Enums.LogOnStep
-            
+
 Defines the steps in the logon process.
-        
+
 ###Fields
 
 ####Total
@@ -384,9 +384,9 @@ In case profile settings are configured for the user or the machine, the time ta
 The time taken to handoff keyboard and mouse control to the user.
 
 ##Monitor.Model.Enums.NotificationRuleActionType
-            
+
 Denotes how the the machines in the catalog are allocated to a user.
-        
+
 ###Fields
 
 ####Unknown
@@ -395,9 +395,9 @@ Unknown.
 
 
 ##Monitor.Model.Enums.NotificationRuleParameterType
-            
+
 datatype of the NotificationRuleParameter
-        
+
 ###Fields
 
 ####Unknown
@@ -426,9 +426,9 @@ The time span
 The enum
 
 ##Monitor.Model.Enums.NotificationRuleTargetType
-            
+
 Denotes how the the machines in the catalog are allocated to a user.
-        
+
 ###Fields
 
 ####Unknown
@@ -449,9 +449,9 @@ Unknown. When the Broker does not send an allocation type.
 
 
 ##Monitor.Model.Enums.NotificationState
-            
+
 What state is the notification in?
-        
+
 ###Fields
 
 ####Unknown
@@ -470,9 +470,9 @@ Notification Preempted
 Notification Completed
 
 ##Monitor.Model.Enums.SessionType
-            
+
 Indicates if the session is running an Application or Desktop.
-        
+
 ###Fields
 
 ####Desktop
@@ -481,9 +481,9 @@ Desktop session
 Application session
 
 ##Monitor.Model.Enums.SortOrderType
-            
+
 SortOrderType
-        
+
 ###Fields
 
 ####Unknown
@@ -494,9 +494,9 @@ Sort by ascending
 Sort by descending
 
 ##Monitor.Model.Enums.TaskResult
-            
+
 Enum for identifying the result of a scheduled database task
-        
+
 ###Fields
 
 ####Unknown
@@ -509,9 +509,9 @@ Task failed
 Task skipped without error
 
 ##Monitor.Model.Enums.DataManagementTask
-            
+
 Enum for identifying a scheduled database task
-        
+
 ###Fields
 
 ####Unknown
@@ -590,9 +590,9 @@ Groom Application Faults Data
 Groom Application Errors Data
 
 ##Monitor.Model.Enums.TaskCategory
-            
+
 Enum for identifying the cateogry of a scheduled database task
-        
+
 ###Fields
 
 ####Unknown
@@ -605,9 +605,9 @@ Reaping of unresolved data
 Grooming away old/deleted data
 
 ##Monitor.Model.Enums.AllocationType
-            
+
 Denotes how the the machines in the catalog are allocated to a user.
-        
+
 ###Fields
 
 ####Unknown
@@ -620,9 +620,9 @@ Machines are allocated to users randomly from a pool of available machines.
 Equivalent to 'Static'
 
 ##Monitor.Model.Enums.ConnectionFailureType
-            
+
 Type of failures for Connections
-        
+
 ###Fields
 
 ####None
@@ -639,9 +639,9 @@ No Licenses Available
 Configuration failure
 
 ##Monitor.Model.Enums.ConnectionState
-            
+
 Enum for session connections status
-        
+
 ###Fields
 
 ####Unknown
@@ -666,9 +666,9 @@ Connection state is reported as Other
 Connection state is pending
 
 ##Monitor.Model.Enums.PersistentUserChangesType
-            
+
 Describes if and how user changes are persisted
-        
+
 ###Fields
 
 ####Unknown
@@ -681,9 +681,9 @@ User changes are persisted locally.
 User changes are persisted on the Pvd.
 
 ##Monitor.Model.Enums.ProvisioningType
-            
+
 Describes how the machine was provisioned
-        
+
 ###Fields
 
 ####Unknown
@@ -696,9 +696,9 @@ Machine provisioned by Provisioning Services (may be physical, blade, VM,...).
 No automated provisioning.
 
 ##Monitor.Model.Enums.FailureCategory
-            
+
 Category for failure types
-        
+
 ###Fields
 
 ####Unknown
@@ -709,9 +709,9 @@ Connection failure category
 Machine failure category
 
 ##Monitor.Model.Enums.RegistrationState
-            
+
 Indicates the registration state of the machine.
-        
+
 ###Fields
 
 ####Unknown
@@ -722,9 +722,9 @@ Machine is currently registered.
 Machine has been unregistered.
 
 ##Monitor.Model.Enums.CatalogType
-            
+
 Type of Catalog Broker name: CatalogKind Desktop Director name: Machine Type The type of machines the catalog will contain.
-        
+
 ###Fields
 
 ####ThinCloned
@@ -743,9 +743,9 @@ A personal vDisk catalog is similar to a single-image catalog, but it also uses 
 A Provisioning Services-personal vDisk (PvsPvd) catalog is similar to a Provisioning Services catalog, but it also uses personal vDisk technology.
 
 ##Monitor.Model.Enums.DesktopKind
-            
+
 The kind of desktops within a delivery group.
-        
+
 ###Fields
 
 ####Private
@@ -754,9 +754,9 @@ Private
 Shared
 
 ##Monitor.Model.Enums.LifecycleState
-            
+
 Enum tracking state of XenDesktop site objects
-        
+
 ###Fields
 
 ####Active
@@ -769,9 +769,9 @@ Object was created, but values are missing, so a background process should poll 
 Stub object - for example, a Machine or Session that didn't really exist but is created by internal processing logic to preserve data relationships
 
 ##Monitor.Model.Enums.LogOnBreakdownType
-            
+
 Enum for logon breakdown api calls
-        
+
 ###Fields
 
 ####None
@@ -784,9 +784,9 @@ Average across the user's sessions
 Average for the desktop group
 
 ##Monitor.Model.MachineMetricBulkInsertModel
-            
+
 Represents a machine metrics statistics of a particular machine.
-        
+
 ###Properties
 
 ####CollectedDate
@@ -804,9 +804,9 @@ Guid of machine this MachineMetric record is associated with
 Initializes a new instance of the MachineMetricBulkInsertModel class.
 
 ##Monitor.Model.MachineMetric
-            
 
-        
+
+
 ###Properties
 
 ####
@@ -841,9 +841,9 @@ Initializes a new instance of the MachineMetricBulkInsertModel class.
 Initializes a new instance of the MachineMetricDaySummary class.
 
 ##Monitor.Model.MachineMetricDaySummary
-            
+
 Summary table for MachineMetric
-        
+
 ###Properties
 
 ####SummaryDate
@@ -905,9 +905,9 @@ Initializes a new instance of the MachineSummary class.
 
 
 ##Monitor.Model.ProcessInfoBulkInsertModel
-            
+
 Represents a process utilization statistics of a particular process on a machine.
-        
+
 ###Properties
 
 ####ProcessKey
@@ -931,9 +931,9 @@ Guid of machine this ProcessInfo record is associated with
 Initializes a new instance of the ProcessInfoBulkInsertModel class.
 
 ##Monitor.Model.ProcessInfo
-            
 
-        
+
+
 ###Properties
 
 ####
@@ -969,9 +969,9 @@ ProcessUtilizationDaySummary values associated with this process
 Initializes a new instance of the ProcessInfoBulkInsertModel class.
 
 ##Monitor.Model.ProcessUtilizationBulkInsertModel
-            
+
 Represents a process utilization statistics of a particular process on a machine.
-        
+
 ###Properties
 
 ####CollectedDate
@@ -991,9 +991,9 @@ Machine unique id
 Initializes a new instance of the ProcessUtilizationBulkInsertModel class.
 
 ##Monitor.Model.ProcessUtilization
-            
 
-        
+
+
 ###Properties
 
 ####
@@ -1080,9 +1080,9 @@ Initializes a new instance of the ProcessUtilizationHourSummary class.
 Initializes a new instance of the ProcessUtilizationMinuteSummary class.
 
 ##Monitor.Model.ProcessUtilizationDaySummary
-            
+
 Day level Summary table for ProcessUtilization
-        
+
 ###Properties
 
 ####SummaryDate
@@ -1110,9 +1110,9 @@ Peak of Memory used for given SummaryDate Eg: Lets say Memory for this machine a
 Initializes a new instance of the ProcessUtilizationDaySummary class.
 
 ##Monitor.Model.ProcessUtilizationHourSummary
-            
+
 Hour level Summary table for ProcessUtilization
-        
+
 ###Properties
 
 ####SummaryDate
@@ -1140,9 +1140,9 @@ Peak of Memory used for given SummaryDate Eg: Lets say Memory for this machine a
 Initializes a new instance of the ProcessUtilizationHourSummary class.
 
 ##Monitor.Model.ProcessUtilizationMinuteSummary
-            
+
 Minute level Summary table for ProcessUtilization
-        
+
 ###Properties
 
 ####SummaryDate
@@ -1170,9 +1170,9 @@ Peak of Memory used for given SummaryDate Eg: Lets say Memory for this machine a
 Initializes a new instance of the ProcessUtilizationMinuteSummary class.
 
 ##Monitor.Model.SessionMetricsBulkInsertModel
-            
+
 Represents a session metrics of a particular session for a machine.
-        
+
 ###Properties
 
 ####Id
@@ -1194,9 +1194,9 @@ Guid of machine this SessionMetrics record is associated with
 Initializes a new instance of the SessionMetricsBulkInsertModel class.
 
 ##Monitor.Model.SessionMetrics
-            
 
-        
+
+
 ###Properties
 
 ####
@@ -1220,9 +1220,9 @@ The machine this ResourceUtilization record is associated with
 Initializes a new instance of the SessionMetricsBulkInsertModel class.
 
 ##Monitor.Model.ResourceUtilizationSummary
-            
+
 Summary table for ResourceUtilization
-        
+
 ###Properties
 
 ####SummaryDate
@@ -1256,9 +1256,9 @@ Granularity of this summary item in minutes (how many minutes of data included i
 Initializes a new instance of the ResourceUtilizationSummary class.
 
 ##Monitor.Model.Pnaa.NotificationRuleParameterChangeLog
-            
+
 NotificationRule instance
-        
+
 ###Properties
 
 ####Id
@@ -1278,9 +1278,9 @@ List of parameters for this NotificationRule
 Initializes a new instance of the NotificationRule class.
 
 ##Monitor.Model.Pnaa.NotificationEmailServerConfiguration
-            
+
 NotificationRule instance
-        
+
 ###Properties
 
 ####Id
@@ -1308,9 +1308,9 @@ EncryptedPassword
 Initializes a new instance of the NotificationRule class.
 
 ##Monitor.Model.Pnaa.NotificationSnmpConfiguration
-            
+
 NotificationRule instance
-        
+
 ###Properties
 
 ####Id
@@ -1342,9 +1342,9 @@ snmp protocol
 Initializes a new instance of the NotificationRule class.
 
 ##Monitor.Model.Pnaa.NotificationTargetValue
-            
+
 NotificationRuleTargetValue instance
-        
+
 ###Properties
 
 ####Id
@@ -1362,9 +1362,9 @@ references the NotificationRuleTarget instance to which this value belongs NOTE:
 Initializes a new instance of the NotificationRuleTargetValue class.
 
 ##Monitor.Model.Pnaa.NotificationTarget
-            
+
 NotificationRule instance
-        
+
 ###Properties
 
 ####
@@ -1395,9 +1395,9 @@ Initializes a new instance of the NotificationRuleTargetValue class.
 Initializes a new instance of the class.
 
 ##Monitor.Model.Pnaa.InstantiatedRuleChangeType
-            
+
 Kind of change represented
-        
+
 ###Fields
 
 ####Unknown
@@ -1410,9 +1410,9 @@ The modify
 The remove
 
 ##Monitor.Model.Pnaa.NotificationActionEmail
-            
 
-        
+
+
 ###Properties
 
 ####Id
@@ -1427,9 +1427,9 @@ Server to send emails with
 Culture name to identify language to send emails in
 
 ##Monitor.Model.Pnaa.NotificationEmailAddress
-            
 
-        
+
+
 ###Properties
 
 ####Id
@@ -1442,9 +1442,9 @@ Culture name to identify language to send emails in
 
 
 ##Monitor.Model.Pnaa.LocalizedString
-            
+
 Contains a localized string and its identified culture
-        
+
 ###Properties
 
 ####CultureName
@@ -1463,9 +1463,9 @@ Initializes a new instance of the class.
 
 
 ##Monitor.Model.Pnaa.Notification
-            
+
 NotificationRule instance
-        
+
 ###Properties
 
 ####
@@ -1723,9 +1723,9 @@ Initializes a new instance of the class.
 Initializes a new instance of the NotificationRuleTargetValue class.
 
 ##Monitor.Model.Pnaa.NotificationLog
-            
+
 NotificationLog instance
-        
+
 ###Properties
 
 ####Id
@@ -1755,9 +1755,9 @@ Active target tracked in this rule notification
 Initializes a new instance of the NotificationRule class.
 
 ##Monitor.Model.Pnaa.NotificationRuleAction
-            
+
 NotificationRule instance
-        
+
 ###Properties
 
 ####Id
@@ -1775,9 +1775,9 @@ List of NotificationRules that use this NotificationRuleAction
 Initializes a new instance of the NotificationAction class.
 
 ##Monitor.Model.Pnaa.NotificationRule
-            
+
 NotificationRule instance
-        
+
 ###Properties
 
 ####
@@ -1897,9 +1897,9 @@ Initializes a new instance of the class.
 Initializes a new instance of the NotificationRuleTargetValue class.
 
 ##Monitor.Model.Pnaa.NotificationRuleGroup
-            
+
 NotificationRule instance
-        
+
 ###Properties
 
 ####Id
@@ -1923,9 +1923,9 @@ List of rules in the group
 Initializes a new instance of the NotificationRuleGroup> class.
 
 ##Monitor.Model.Pnaa.NotificationRuleParameter
-            
+
 Catalog image
-        
+
 ###Properties
 
 ####
@@ -1964,9 +1964,9 @@ Initializes a new instance of the NotificationRule class.
 Initializes a new instance of the class.
 
 ##Monitor.Model.Pnaa.NotificationRuleTarget
-            
+
 NotificationRule instance
-        
+
 ###Properties
 
 ####Id
@@ -1999,9 +1999,9 @@ Initializes a new instance of the class.
 Initializes a new instance of the NotificationRuleTargetValue class.
 
 ##Monitor.Model.Pnaa.NotificationRuleTargetValue
-            
+
 NotificationRuleTargetValue instance
-        
+
 ###Properties
 
 ####Id
@@ -2019,9 +2019,9 @@ references the NotificationRuleTarget instance to which this value belongs NOTE:
 Initializes a new instance of the NotificationRuleTargetValue class.
 
 ##Monitor.Model.Application
-            
+
 Represents a virtualized application running on a session.
-        
+
 ###Properties
 
 ####Id
@@ -2145,9 +2145,9 @@ Initializes a new instance of the class.
 Initializes a new instance of the ApplicationInstanceSummary class.
 
 ##Monitor.Model.ApplicationErrorBulkInsertModel
-            
+
 Represents Application Error data
-        
+
 ###Properties
 
 ####Id
@@ -2175,9 +2175,9 @@ Guid of machine this Error record is associated with
 Initializes a new instance of the class.
 
 ##Monitor.Model.ApplicationError
-            
+
 Record of an application error
-        
+
 ###Properties
 
 ####
@@ -2209,9 +2209,9 @@ The machine this Error record is associated with
 Initializes a new instance of the class.
 
 ##Monitor.Model.ApplicationFaultBulkInsertModel
-            
+
 Represents Application Fault data
-        
+
 ###Properties
 
 ####Id
@@ -2239,9 +2239,9 @@ Guid of machine this Fault record is associated with
 Initializes a new instance of the class.
 
 ##Monitor.Model.ApplicationFault
-            
+
 Record of an application fault
-        
+
 ###Properties
 
 ####
@@ -2273,9 +2273,9 @@ The machine this Fault record is associated with
 Initializes a new instance of the class.
 
 ##Monitor.Model.ApplicationInstance
-            
+
 Record of an instance of a running application
-        
+
 ###Properties
 
 ####Id
@@ -2324,9 +2324,9 @@ Initializes a new instance of the class.
 Initializes a new instance of the ApplicationInstanceSummary class.
 
 ##Monitor.Model.ApplicationInstanceSummary
-            
+
 Roll up table for Application instances
-        
+
 ###Properties
 
 ####Id
@@ -2358,9 +2358,9 @@ Granularity of this summary item in minutes (how many minutes of data included i
 Initializes a new instance of the ApplicationInstanceSummary class.
 
 ##Monitor.Model.EntityBase
-            
+
 POCO objects base class
-        
+
 ###Properties
 
 ####CreatedDate
@@ -2374,9 +2374,9 @@ Date this object was updated or modified
 Initializes a new instance of the EntityBase class.
 
 ##Monitor.Model.Catalog
-            
+
 Catalog image
-        
+
 ###Properties
 
 ####Id
@@ -2406,9 +2406,9 @@ List of machines that are part of this catalog
 Initializes a new instance of the class.
 
 ##Monitor.Model.DesktopOSDesktopSummary
-            
+
 Record of an instance of a running application
-        
+
 ###Properties
 
 ####Id
@@ -2436,9 +2436,9 @@ Granularity of this summary item in minutes (how many minutes of data included i
 Initializes a new instance of the class.
 
 ##Monitor.Model.ResourceUtilizationBulkInsertModel
-            
+
 Represents a resource utilization statistics of a particular machine.
-        
+
 ###Properties
 
 ####CollectedDate
@@ -2466,9 +2466,9 @@ Guid of DesktopGroup this ResourceUtilization record is associated with
 Initializes a new instance of the ResourceUtilizationModel class.
 
 ##Monitor.Model.ResourceUtilization
-            
 
-        
+
+
 ###Properties
 
 ####
@@ -2527,9 +2527,9 @@ Initializes a new instance of the ResourceUtilizationSummary class.
 Initializes a new instance of the ResourceUtilizationModel class.
 
 ##Monitor.Model.VShared.ConnectionFailureCategory
-            
+
 ConnectionFailureCategory, grouping for Connection failure types
-        
+
 ###Properties
 
 ####Id
@@ -2545,9 +2545,9 @@ Category of the failure code. See the ConnectionFailureType enum for possible va
 Initializes a new instance of the class.
 
 ##Monitor.Model.ConnectionFailureLog
-            
+
 ConnectionFailureLog
-        
+
 ###Properties
 
 ####Id
@@ -2567,9 +2567,9 @@ Connection failure value. See the SessionFailureCode enum for possible values Th
 Initializes a new instance of the ConnectionFailureLog class.
 
 ##Monitor.Model.Hotfix
-            
+
 Hotfix class
-        
+
 ###Properties
 
 ####Id
@@ -2599,9 +2599,9 @@ Historical list of the all the machines that have this hotfix installed/ removed
 Initializes a new instance of the Hotfix class.
 
 ##Monitor.Model.Notifications.Interfaces.InstantiatedRuleChangeEventArgs
-            
+
 Fired when an instantiated rule changes
-        
+
 ###Properties
 
 ####ChangeType
@@ -2615,9 +2615,9 @@ Gets the changed rules. The changed rules.
 Initializes a new instance of the class.
 
 ##Monitor.Model.Notifications.Interfaces.ParameterMapping
-            
+
 Maps input parameters to output parameters
-        
+
 ###Properties
 
 ####SourceId
@@ -2636,9 +2636,9 @@ Initializes a new instance of the class.
 
 
 ##Monitor.Model.MachineHotfixLog
-            
+
 HotfixHistory class relates the machine and hotfixes installed/ removed
-        
+
 ###Properties
 
 ####Id
@@ -2662,9 +2662,9 @@ The hotfix associated with Machine
 Initializes a new instance of the MachineHotfixLog class.
 
 ##Monitor.Model.V2.Application
-            
+
 Represents a virtualized application running on a session.
-        
+
 ###Properties
 
 ####Id
@@ -2734,9 +2734,9 @@ Initializes a new instance of the class.
 Initializes a new instance of the ApplicationInstanceSummary class.
 
 ##Monitor.Model.V2.ApplicationInstance
-            
+
 Record of an instance of a running application
-        
+
 ###Properties
 
 ####Id
@@ -2785,9 +2785,9 @@ Initializes a new instance of the class.
 Initializes a new instance of the ApplicationInstanceSummary class.
 
 ##Monitor.Model.V2.ApplicationInstanceSummary
-            
+
 Roll up table for Application instances
-        
+
 ###Properties
 
 ####Id
@@ -2819,9 +2819,9 @@ Granularity of this summary item in minutes (how many minutes of data included i
 Initializes a new instance of the ApplicationInstanceSummary class.
 
 ##Monitor.Model.V2.Catalog
-            
+
 Catalog image
-        
+
 ###Properties
 
 ####Id
@@ -2851,9 +2851,9 @@ List of machines that are part of this catalog
 Initializes a new instance of the class.
 
 ##Monitor.Model.V2.Connection
-            
+
 Summary collection object for session detail information - a new record will be created for every connect/reconnect on the same session All session connect data points will be captured in this class
-        
+
 ###Properties
 
 ####Id
@@ -2946,9 +2946,9 @@ Initializes a new instance of the Connection class.
 Initializes a new instance of the ConnectionFailureLog class.
 
 ##Monitor.Model.V2.ConnectionFailureLog
-            
+
 ConnectionFailureLog
-        
+
 ###Properties
 
 ####Id
@@ -2968,9 +2968,9 @@ Connection failure value. See the SessionFailureCode enum for possible values Th
 Initializes a new instance of the ConnectionFailureLog class.
 
 ##Monitor.Model.V2.DesktopGroup
-            
+
 Assignment for - get-brokerdesktopgroup cmdlet
-        
+
 ###Properties
 
 ####Id
@@ -2998,9 +2998,9 @@ List of Applications that are in this group
 Initializes a new instance of the DesktopGroup class.
 
 ##Monitor.Model.V2.FailureLogSummary
-            
+
 POCO object for failures (connection/machine) rollup/summary per minute/hour/day
-        
+
 ###Properties
 
 ####Id
@@ -3026,9 +3026,9 @@ Granularity of this summary item in minutes Length in minutes of the time slot a
 Initializes a new instance of the FailureLogSummary class.
 
 ##Monitor.Model.V2.Hotfix
-            
+
 Hotfix class
-        
+
 ###Properties
 
 ####Id
@@ -3058,9 +3058,9 @@ Historical list of the all the machines that have this hotfix installed/ removed
 Initializes a new instance of the Hotfix class.
 
 ##Monitor.Model.V2.Hypervisor
-            
+
 Assignment for - get-brokerdesktopgroup cmdlet
-        
+
 ###Properties
 
 ####Id
@@ -3078,9 +3078,9 @@ Machines hosted by this hypervisor
 Initializes a new instance of the class.
 
 ##Monitor.Model.V2.LoadIndex
-            
+
 Load Index collected data
-        
+
 ###Properties
 
 ####Id
@@ -3135,9 +3135,9 @@ Initializes a new instance of the LoadIndex class.
 Initializes a new instance of the LoadIndexSummary class.
 
 ##Monitor.Model.V2.LoadIndexSummary
-            
+
 POCO object for load index rollup/summary per hour/day
-        
+
 ###Properties
 
 ####Id
@@ -3171,9 +3171,9 @@ Granularity of this summary item in minutes Size of the time windows in minutes 
 Initializes a new instance of the LoadIndexSummary class.
 
 ##Monitor.Model.V2.Machine
-            
+
 Represents a Machine in the site
-        
+
 ###Properties
 
 ####Id
@@ -3307,9 +3307,9 @@ Initializes a new instance of the MachineFailureLog class.
 Initializes a new instance of the MachineHotfixLog class.
 
 ##Monitor.Model.V2.MachineFailureLog
-            
+
 Represents the accumulation of machine failures
-        
+
 ###Properties
 
 ####Id
@@ -3333,9 +3333,9 @@ Last deregistration reason for this machine See the enum DeregistrationReasonCod
 Initializes a new instance of the MachineFailureLog class.
 
 ##Monitor.Model.V2.MachineHotfixLog
-            
+
 HotfixHistory class relates the machine and hotfixes installed/ removed
-        
+
 ###Properties
 
 ####Id
@@ -3359,9 +3359,9 @@ The hotfix associated with Machine
 Initializes a new instance of the MachineHotfixLog class.
 
 ##Monitor.Model.V2.Session
-            
+
 Represents a user connected to a desktop.
-        
+
 ###Properties
 
 ####SessionKey
@@ -3434,9 +3434,9 @@ Initializes a new instance of the Session class.
 Initializes a new instance of the SessionActivitySummary class.
 
 ##Monitor.Model.V2.SessionActivitySummary
-            
+
 POCO object for session activity consolidation
-        
+
 ###Properties
 
 ####Id
@@ -3466,9 +3466,9 @@ Granularity of the time window associated with this summary item in minutes (how
 Initializes a new instance of the SessionActivitySummary class.
 
 ##Monitor.Model.V2.TaskLog
-            
+
 Represents the task execution log
-        
+
 ###Properties
 
 ####Id
@@ -3485,9 +3485,9 @@ Result from having run the task. See the TaskResult enum for possible values The
 Empty if task ran successsfully, otherwise a string describing the error that occurred. The error message.
 
 ##Monitor.Model.V2.User
-            
+
 Represents a user in the system
-        
+
 ###Properties
 
 ####Id
@@ -3511,9 +3511,9 @@ List of past and present sessions for this User
 Default constructor
 
 ##Monitor.Model.ServerOSDesktopSummary
-            
+
 Record of an instance of a running application
-        
+
 ###Properties
 
 ####Id
@@ -3545,9 +3545,9 @@ Granularity of this summary item in minutes (how many minutes of data included i
 Initializes a new instance of the class.
 
 ##Monitor.Model.TaskLog
-            
+
 Represents the task execution log
-        
+
 ###Properties
 
 ####Id
@@ -3564,9 +3564,9 @@ Result from having run the task. See the TaskResult enum for possible values The
 Empty if task ran successsfully, otherwise a string describing the error that occurred. The error message.
 
 ##Monitor.Model.LoadIndexSummary
-            
+
 POCO object for load index rollup/summary per hour/day
-        
+
 ###Properties
 
 ####Id
@@ -3600,9 +3600,9 @@ Granularity of this summary item in minutes Size of the time windows in minutes 
 Initializes a new instance of the LoadIndexSummary class.
 
 ##Monitor.Model.FailureLogSummary
-            
+
 POCO object for failures (connection/machine) rollup/summary per minute/hour/day
-        
+
 ###Properties
 
 ####Id
@@ -3628,9 +3628,9 @@ Granularity of this summary item in minutes Length in minutes of the time slot a
 Initializes a new instance of the FailureLogSummary class.
 
 ##Monitor.Model.Hypervisor
-            
+
 Assignment for - get-brokerdesktopgroup cmdlet
-        
+
 ###Properties
 
 ####Id
@@ -3648,9 +3648,9 @@ Machines hosted by this hypervisor
 Initializes a new instance of the class.
 
 ##Monitor.Model.LoadIndex
-            
+
 Load Index collected data
-        
+
 ###Properties
 
 ####
@@ -3705,9 +3705,9 @@ Initializes a new instance of the LoadIndexSummary class.
 Initializes a new instance of the LoadIndex class.
 
 ##Monitor.Model.MachineFailureLog
-            
+
 Represents the accumulation of machine failures
-        
+
 ###Properties
 
 ####Id
@@ -3731,9 +3731,9 @@ Last deregistration reason for this machine See the enum DeregistrationReasonCod
 Initializes a new instance of the MachineFailureLog class.
 
 ##Monitor.Model.DesktopGroup
-            
+
 Assignment for - get-brokerdesktopgroup cmdlet
-        
+
 ###Properties
 
 ####Id
@@ -3767,9 +3767,9 @@ ResourceUtilizationSummary values associated with this Desktop Group
 Initializes a new instance of the DesktopGroup class.
 
 ##Monitor.Model.SessionActivitySummary
-            
+
 POCO object for session activity consolidation
-        
+
 ###Properties
 
 ####Id
@@ -3799,9 +3799,9 @@ Granularity of the time window associated with this summary item in minutes (how
 Initializes a new instance of the SessionActivitySummary class.
 
 ##Monitor.Model.Connection
-            
+
 Summary collection object for session detail information - a new record will be created for every connect/reconnect on the same session All session connect data points will be captured in this class
-        
+
 ###Properties
 
 ####
@@ -3896,9 +3896,9 @@ Initializes a new instance of the ConnectionFailureLog class.
 Initializes a new instance of the Connection class.
 
 ##Monitor.Model.Machine
-            
+
 Represents a Machine in the site
-        
+
 ###Properties
 
 ####
@@ -4080,9 +4080,9 @@ Initializes a new instance of the MachineFailureLog class.
 Initializes a new instance of the Machine class.
 
 ##Monitor.Model.Session
-            
+
 Represents a user connected to a desktop.
-        
+
 ###Properties
 
 ####
@@ -4184,9 +4184,9 @@ Initializes a new instance of the SessionActivitySummary class.
 Initializes a new instance of the Session class.
 
 ##Monitor.Model.User
-            
+
 Represents a user in the system
-        
+
 ###Properties
 
 ####Id
@@ -4210,9 +4210,9 @@ List of past and present sessions for this User
 Default constructor
 
 ##Monitor.Model.V1.Catalog
-            
+
 Catalog image
-        
+
 ###Properties
 
 ####Id
@@ -4237,9 +4237,9 @@ Provisioning Scheme Id is used by MCS to identify a Catalog
 Group of virtual desktops using this catalog
 
 ##Monitor.Model.V1.ConnectionFailureLog
-            
+
 ConnectionFailureLog
-        
+
 ###Properties
 
 ####Id
@@ -4254,9 +4254,9 @@ Gets or sets the failure time. The failure time.
 Gets or sets the connection failure value - this is the value of the SessionFailureCode enum from the Broker. The connection failure value.
 
 ##Monitor.Model.V1.LoadIndexSummary
-            
+
 POCO object for load index rollup/summary per hour/day
-        
+
 ###Properties
 
 ####Id
@@ -4283,9 +4283,9 @@ Average session count for this machine for the hour/day specified The average se
 Granularity of this summary item in minutes (how many minutes of data included in this record) The granularity.
 
 ##Monitor.Model.V1.FailureLogSummary
-            
+
 POCO object for failures (connection/machine) rollup/summary per minute/hour/day
-        
+
 ###Properties
 
 ####Id
@@ -4306,9 +4306,9 @@ Number of maximum connected sessions for this desktop group for the minute speci
 Granularity of this summary item in minutes (how many minutes of data included in this record) The granularity.
 
 ##Monitor.Model.V1.Hypervisor
-            
+
 Assignment for - get-brokerdesktopgroup cmdlet
-        
+
 ###Properties
 
 ####Id
@@ -4321,9 +4321,9 @@ Lifecycle state for the Hypervisor - can be active or deleted
 Machines that are in this powered by this hypervisor
 
 ##Monitor.Model.V1.LoadIndex
-            
+
 Load Index collected data
-        
+
 ###Properties
 
 ####
@@ -4368,9 +4368,9 @@ Foreign key associating this LoadIndex record with a Machine
 The machine the load was measured on
 
 ##Monitor.Model.V1.MachineFailureLog
-            
+
 MachineFailureLog
-        
+
 ###Properties
 
 ####Id
@@ -4389,9 +4389,9 @@ Fault State of the machine
 Last deregistration reason for this machine
 
 ##Monitor.Model.V1.DesktopGroup
-            
+
 Assignment for - get-brokerdesktopgroup cmdlet
-        
+
 ###Properties
 
 ####Id
@@ -4410,9 +4410,9 @@ Session support - RDS or VDI for this desktop group The session support.
 Machines that are in this group
 
 ##Monitor.Model.V1.SessionActivitySummary
-            
+
 POCO object for session activity consolidation
-        
+
 ###Properties
 
 ####Id
@@ -4437,9 +4437,9 @@ Total number of logons in this desktop group for the minute specified The total 
 Granularity of this summary item in minutes (how many minutes of data included in this record) The granularity.
 
 ##Monitor.Model.V1.Connection
-            
+
 summary collection object for session detail information - a new record will be created for every connect/reconnect on the same session ALL session connect data points will be captured in this class
-        
+
 ###Properties
 
 ####
@@ -4529,9 +4529,9 @@ The session this detail record is tied to
 constructor
 
 ##Monitor.Model.V1.Machine
-            
+
 Machine class
-        
+
 ###Properties
 
 ####
@@ -4639,9 +4639,9 @@ Failures associated with this machine
 Default constructor for machine object
 
 ##Monitor.Model.V1.Session
-            
+
 Represents a user connected to a desktop.
-        
+
 ###Properties
 
 ####
@@ -4705,9 +4705,9 @@ Details associated with this session (each connection should have a record)
 Default constructor
 
 ##Monitor.Model.V1.User
-            
+
 Represents a user in the system
-        
+
 ###Properties
 
 ####Id
@@ -4724,3 +4724,36 @@ Full name of the user. TODO: Make sure this is populated when added to poll and 
 Domain for the user
 ####Sessions
 List of past and present sessions for this User
+
+### SessionFailureCode Enums
+
+| Code | Description |
+| --- | --- |
+| 0 | Unknown |
+| 1 | None |
+| 2 | SessionPreparation |
+| 3 | RegistrationTimeout |
+| 4 | ConnectionTimeout |
+| 5 | Licensing |
+| 6 | Ticketing |
+| 7 | Other |
+| 8 | GeneralFail |
+| 9 | MaintenanceMode |
+| 10 | ApplicationDisabled |
+| 11 | LicenseFeatureRefused |
+| 12 | NoDesktopAvailable |
+| 13 | SessionLimitReached |
+| 14 | DisallowedProtocol |
+| 15 | ResourceUnavailable |
+| 16 | ActiveSessionReconnectDisabled |
+| 17 | NoSessionToReconnect |
+| 18 | SpinUpFailed |
+| 19 | Refused |
+| 20 | ConfigurationSetFailure |
+| 21 | MaxTotalInstancesExceeded |
+| 22 | MaxPerUserInstancesExceeded |
+| 23 | CommunicationError |
+| 24 | MaxPerMachineInstancesExceeded |
+| 25 | MaxPerEntitlementInstancesExceeded |
+| 100 | NoMachineAvailable |
+| 101 | MachineNotFunctional |
