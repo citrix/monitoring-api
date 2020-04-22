@@ -4725,35 +4725,178 @@ Domain for the user
 ####Sessions
 List of past and present sessions for this User
 
-### SessionFailureCode Enums
+## Enums, error codes, and descriptions
 
-| Code | Description |
-| --- | --- |
-| 0 | Unknown |
-| 1 | None |
-| 2 | SessionPreparation |
-| 3 | RegistrationTimeout |
-| 4 | ConnectionTimeout |
-| 5 | Licensing |
-| 6 | Ticketing |
-| 7 | Other |
-| 8 | GeneralFail |
-| 9 | MaintenanceMode |
-| 10 | ApplicationDisabled |
-| 11 | LicenseFeatureRefused |
-| 12 | NoDesktopAvailable |
-| 13 | SessionLimitReached |
-| 14 | DisallowedProtocol |
-| 15 | ResourceUnavailable |
-| 16 | ActiveSessionReconnectDisabled |
-| 17 | NoSessionToReconnect |
-| 18 | SpinUpFailed |
-| 19 | Refused |
-| 20 | ConfigurationSetFailure |
-| 21 | MaxTotalInstancesExceeded |
-| 22 | MaxPerUserInstancesExceeded |
-| 23 | CommunicationError |
-| 24 | MaxPerMachineInstancesExceeded |
-| 25 | MaxPerEntitlementInstancesExceeded |
-| 100 | NoMachineAvailable |
-| 101 | MachineNotFunctional |
+### SessionFailureCode
+
+| Error Code |Enum name| Description |
+| --- | -----| ---- |
+| 0 | Unknown |Unknown|
+| 1 | None |None (no failure)|
+| 2 | SessionPreparation |Failure during session preparation|
+| 3 | RegistrationTimeout |Failure due to registration timeout|
+| 4 | ConnectionTimeout |Failure due to connection timeout|
+| 5 | Licensing |Failure due to licensing|
+| 6 | Ticketing |Failure due to ticketing|
+| 7 | Other |Other failure reasons|
+| 8 | GeneralFail |General failure|
+| 9 | MaintenanceMode |Desktop group, Machine or Hypervisor is in maintenance mode|
+| 10 | ApplicationDisabled |Selected application is currently disabled|
+| 11 | LicenseFeatureRefused |Required feature is not licensed|
+| 12 | NoDesktopAvailable |No machine is available to satisfy launch|
+| 13 | SessionLimitReached |VDI machine is already in use (not used for RDS)|
+| 14 | DisallowedProtocol |Requested protocol is not allowed|
+| 15 | ResourceUnavailable |Resource is unavailable |
+| 16 | ActiveSessionReconnectDisabled |Active session stealing is required, but is disabled|
+| 17 | NoSessionToReconnect |Session to which reconnect is directed is not found (can only occur on a launch retry)|
+| 18 | SpinUpFailed |Failed to power-up machine for launch|
+| 19 | Refused |Session refused|
+| 20 | ConfigurationSetFailure |Configuration set failure|
+| 21 | MaxTotalInstancesExceeded |App launch refused because limit on total concurrent usage is reached|
+| 22 | MaxPerUserInstancesExceeded |App launch refused because limit on per-user usage is reached|
+| 23 | CommunicationError |Launch failed because the VDA could not be contacted|
+| 24 | MaxPerMachineInstancesExceeded |App launch refused because limit on per machine usage is reached|
+| 25 | MaxPerEntitlementInstancesExceeded |Desktop launch refused because limit on per entitlement usage is reached|
+| 100 | NoMachineAvailable |No machine available|
+| 101 | MachineNotFunctional |Machine not functional|
+
+### CatalogType
+
+| Error code | Enum name    | Description |
+|------------|--------------|-------------|
+| 0          | ThinCloned   | A thin-cloned catalog is used for original golden VM images that are cloned when they are assigned to a VM, and users' changes to the VM image are retained after the VM is restarted |
+| 1          | SingleImage  | A single-image catalog is used when multiple machines provisioned with Provisioning Services for VMs all share a single golden VM image when they run and, when restarted, they revert to the original VM image state |
+| 2          | PowerManaged | This catalog kind is for managed machines that are manually provisioned by administrators. All machines in this type of catalog are managed, and so must be associated with a hypervisor connection. |
+| 3          | UnManaged    | This catalog kind is for unmanaged machines, so there is no associated hypervisor connection |
+| 4          | Pvs          | This catalog kind is for managed machines that are provisioned using Provisioning Services. All machines in this type of catalog are managed, and so must be associated with a hypervisor connection. Only shared desktops are suitable for this catalog kind.|
+| 5          | Pvd          | A personal vDisk catalog is similar to a single-image catalog, but it also uses personal vDisk technology  |
+| 6          | PvsPvd       | A Provisioning Services-personal vDisk (PvsPvd) catalog is similar to a Provisioning Services catalog, but it also uses personal vDisk technology|
+
+
+### ConditionTargetType
+
+| Error code | Enum name    | Description        |
+|------------|--------------|--------------------|
+| 0          | Unknown      | The unknown       |
+| 1          | Site         | The site           |
+| 2          | Controller   | The controller     |
+| 3          | DesktopGroup | The delivery group |
+| 4          | Catalog      | The Catalog        |
+| 5          | RdsWorker    | The RDS worker     |
+| 6          | Vdi          | The vdi            |
+| 7          | User         | User               |
+
+### ConnectionFailureType
+
+| Error code | Enum name               | Description                                            |
+|------------|-------------------------|--------------------------------------------------------|
+| 0          | None                    | None                                                   |
+| 1          | ClientConnectionFailure | Session failed to start                                |
+| 2          | MachineFailure          | Machine failure                                        |
+| 3          | NoCapacityAvailable     | No available capacity to start or reconnect to a session|
+| 4          | NoLicensesAvailable     | No Licenses available                                  |
+| 5          | Configuration           | Configuration failure                                  |
+
+### ConnectionState
+
+| Error code | Enum name          | Description                                         |
+|------------|--------------------|-----------------------------------------------------|
+| 0          | Unknown            | Default value: unknown                            |
+| 1          | Connected          | Actively connected to desktop                       |
+| 2          | Disconnected       | Disconnected from desktop, but session still exists |
+| 3          | Terminated         | Session has been terminated                         |
+| 4          | PreparingSession   | Session is in the preparing state                   |
+| 5          | Active             | Session is active                                   |
+| 6          | Reconnecting       | User is reconnecting to the session                 |
+| 7          | NonBrokeredSession | Session is non-brokered                            |
+| 8          | Other              | Connection state is reported as Other               |
+| 9          | Pending            | Connection state is pending                         |
+
+### DeliveryType
+
+| Error code | Enum name       | Description                                    |
+|------------|-----------------|------------------------------------------------|
+| 0          | DesktopsOnly    | Only desktops are published                 |
+| 1          | AppsOnly        | Only applications are published              |
+| 2          | DesktopsAndApps | Both desktops and applications are published |
+
+### DesktopKind
+
+| Error code | Enum name | Description      |
+|------------|-----------|------------------|
+| 0          | Private   | Private desktops |
+| 1          | Shared    | Shared desktops  |
+
+### DesktopType
+
+| Error code | Enum name | Description                |
+|------------|-----------|----------------------------|
+| 0          | None      | None                       |
+| 1          | Vdi       | VM hosted desktop          |
+| 2          | RemotePc  | Unmanaged desktop RemotePC |
+| 3          | Rds       | VM hosted RDS              |
+| 4          | Unknown   | Unknown type               |
+
+### FailureCategory
+
+| Error code | Enum name  | Description                 |
+|------------|------------|-----------------------------|
+| 0          | Unknown    | Default value: unknown    |
+| 1          | Connection | Connection failure category |
+| 2          | Machine    | Machine failure category    |
+
+### LifecycleState
+
+| Error code | Enum name          | Description|
+|------------|--------------------|------------|
+| 0          | Active             | Default value: entity is active      |
+| 1          | Deleted            | Object was deleted  |
+| 2          | RequiresResolution | Object was created, but values are missing, so a background process should poll to update missing values  |
+| 3          | Stub               | Stub object: for example, a machine or a session that does not exist but is created by internal processing logic to preserve data relationships |
+
+### LogonBreakdownType
+
+| Error code | Enum name           | Description                        |
+|------------|---------------------|------------------------------------|
+| 0          | None                | Default value: none              |
+| 1          | UsersLastSession    | User's last session information    |
+| 2          | UsersSessionAverage | Average across the user's sessions |
+| 3          | DesktopGroupAverage | Average for the desktop group      |
+
+### LogOnStep
+
+| Error code | Enum name      | Description  |
+|------------|----------------|--------------|
+| 0          | Total          | Total        |
+| 1          | Brokering      | Time taken to complete the process of brokering the session|
+| 2          | VMStart        | If the session required a machine to be started, the time taken to start the VM|
+| 3          | Hdx            | Time taken to complete the steps required in setting up the HDX connection from the client to the VM         |
+| 4          | Authentication | Time taken to complete authentication to the remote session|
+| 5          | Gpos           | If any Group Policy settings have been enabled on the machines, the time taken for the GPOs to be applied.   |
+| 6          | LogOnScripts   | If logon scripts are configured for the session, the time taken for the logon scripts to be executed        |
+| 7          | ProfileLoad    | If profile settings are configured for the user or the machine, the time taken for the profile to be loaded. |
+| 8          | Interactive    | Time taken to hand off keyboard and mouse control to the user.|
+
+### ProvisioningType
+
+| Error code | Enum name | Description  |
+|------------|-----------|--------------|
+| 0          | Unknown   | Unknown    |
+| 1          | MCS       | Machine provisioned by Machine Creation Services (machine must be a VM)|
+| 2          | PVS       | Machine provisioned by Provisioning Services (may be physical, blade, VM) |
+| 3          | Manual    | No automated provisioning   |
+
+### RegistrationState
+
+| Error code | Enum name    | Description                       |
+|------------|--------------|-----------------------------------|
+| 0          | Unknown      | Unknown                           |
+| 1          | Registered   | Machine is currently registered |
+| 2          | Unregistered | Machine has been unregistered  |
+
+### SessionType
+
+| Error code | Enum name   | Description         |
+|------------|-------------|---------------------|
+| 0          | Desktop     | Desktop session     |
+| 1          | Application | Application session |
