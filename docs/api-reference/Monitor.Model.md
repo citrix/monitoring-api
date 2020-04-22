@@ -4729,7 +4729,7 @@ List of past and present sessions for this User
 
 ### SessionFailureCode
 
-| Error Code |Enum name| Description |
+| Error Code |Enum value| Description |
 | --- | -----| ---- |
 | 0 | Unknown |Unknown|
 | 1 | None |None (no failure)|
@@ -4762,7 +4762,7 @@ List of past and present sessions for this User
 
 ### CatalogType
 
-| Error code | Enum name    | Description |
+| Error code | Enum value    | Description |
 |------------|--------------|-------------|
 | 0          | ThinCloned   | A thin-cloned catalog is used for original golden VM images that are cloned when they are assigned to a VM, and users' changes to the VM image are retained after the VM is restarted |
 | 1          | SingleImage  | A single-image catalog is used when multiple machines provisioned with Provisioning Services for VMs all share a single golden VM image when they run and, when restarted, they revert to the original VM image state |
@@ -4775,7 +4775,7 @@ List of past and present sessions for this User
 
 ### ConditionTargetType
 
-| Error code | Enum name    | Description        |
+| Error code | Enum value    | Description        |
 |------------|--------------|--------------------|
 | 0          | Unknown      | The unknown       |
 | 1          | Site         | The site           |
@@ -4788,7 +4788,7 @@ List of past and present sessions for this User
 
 ### ConnectionFailureType
 
-| Error code | Enum name               | Description                                            |
+| Error code | Enum value               | Description                                            |
 |------------|-------------------------|--------------------------------------------------------|
 | 0          | None                    | None                                                   |
 | 1          | ClientConnectionFailure | Session failed to start                                |
@@ -4799,7 +4799,7 @@ List of past and present sessions for this User
 
 ### ConnectionState
 
-| Error code | Enum name          | Description                                         |
+| Error code | Enum value          | Description                                         |
 |------------|--------------------|-----------------------------------------------------|
 | 0          | Unknown            | Default value: unknown                            |
 | 1          | Connected          | Actively connected to desktop                       |
@@ -4814,7 +4814,7 @@ List of past and present sessions for this User
 
 ### DeliveryType
 
-| Error code | Enum name       | Description                                    |
+| Error code | Enum value       | Description                                    |
 |------------|-----------------|------------------------------------------------|
 | 0          | DesktopsOnly    | Only desktops are published                 |
 | 1          | AppsOnly        | Only applications are published              |
@@ -4822,14 +4822,14 @@ List of past and present sessions for this User
 
 ### DesktopKind
 
-| Error code | Enum name | Description      |
+| Error code | Enum value | Description      |
 |------------|-----------|------------------|
 | 0          | Private   | Private desktops |
 | 1          | Shared    | Shared desktops  |
 
 ### DesktopType
 
-| Error code | Enum name | Description                |
+| Error code | Enum value | Description                |
 |------------|-----------|----------------------------|
 | 0          | None      | None                       |
 | 1          | Vdi       | VM hosted desktop          |
@@ -4839,7 +4839,7 @@ List of past and present sessions for this User
 
 ### FailureCategory
 
-| Error code | Enum name  | Description                 |
+| Error code | Enum value  | Description                 |
 |------------|------------|-----------------------------|
 | 0          | Unknown    | Default value: unknown    |
 | 1          | Connection | Connection failure category |
@@ -4847,7 +4847,7 @@ List of past and present sessions for this User
 
 ### LifecycleState
 
-| Error code | Enum name          | Description|
+| Error code | Enum value          | Description|
 |------------|--------------------|------------|
 | 0          | Active             | Default value: entity is active      |
 | 1          | Deleted            | Object was deleted  |
@@ -4856,7 +4856,7 @@ List of past and present sessions for this User
 
 ### LogonBreakdownType
 
-| Error code | Enum name           | Description                        |
+| Error code | Enum value           | Description                        |
 |------------|---------------------|------------------------------------|
 | 0          | None                | Default value: none              |
 | 1          | UsersLastSession    | User's last session information    |
@@ -4865,7 +4865,7 @@ List of past and present sessions for this User
 
 ### LogOnStep
 
-| Error code | Enum name      | Description  |
+| Error code | Enum value      | Description  |
 |------------|----------------|--------------|
 | 0          | Total          | Total        |
 | 1          | Brokering      | Time taken to complete the process of brokering the session|
@@ -4879,7 +4879,7 @@ List of past and present sessions for this User
 
 ### ProvisioningType
 
-| Error code | Enum name | Description  |
+| Error code | Enum value | Description  |
 |------------|-----------|--------------|
 | 0          | Unknown   | Unknown    |
 | 1          | MCS       | Machine provisioned by Machine Creation Services (machine must be a VM)|
@@ -4888,7 +4888,7 @@ List of past and present sessions for this User
 
 ### RegistrationState
 
-| Error code | Enum name    | Description                       |
+| Error code | Enum value    | Description                       |
 |------------|--------------|-----------------------------------|
 | 0          | Unknown      | Unknown                           |
 | 1          | Registered   | Machine is currently registered |
@@ -4896,7 +4896,7 @@ List of past and present sessions for this User
 
 ### SessionType
 
-| Error code | Enum name   | Description         |
+| Error code | Enum value   | Description         |
 |------------|-------------|---------------------|
 | 0          | Desktop     | Desktop session     |
 | 1          | Application | Application session |
