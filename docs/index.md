@@ -170,6 +170,7 @@ appid='{00000000-0000-0000-0000-000000000000}'
     Get-ConfigRegisteredServiceInstance -ServiceType Config |
     Reset-MonitorServiceGroupMembership
     ```
+ 
 ***Part 2.2: Modify the Monitor Service configuration settings*** **(applicable for OData V4 only)**
 
 1.  Open the ```Citrix.Monitor.exe.Config``` file and modify the element given below (```http``` to ```https```): 
