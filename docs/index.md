@@ -148,7 +148,7 @@ appid='{00000000-0000-0000-0000-000000000000}'
 
 **Tip**: *In a PowerShell command window, ensure you put single quotes around the GUID in the appID, as shown above, or the command will not work. Note that a line break has been added to this example for readability only.*
 
-***Part 2: Modify the Monitor Service configuration settings***
+***Part 2.1: Modify the Monitor Service configuration settings*** **(applicable for OData V1 to V3 only)**
 
 1. From any Delivery Controller in the Site, run the following PowerShell commands once. This removes the Monitor Service registration with the Configuration Service.
     ```
@@ -162,6 +162,29 @@ appid='{00000000-0000-0000-0000-000000000000}'
     -  Using a cmd prompt, locate the installed Citrix Monitor directory (typically in C:\\Program Files\\Citrix\\Monitor\\Service). Within that directory run:
     ```
     Citrix.Monitor.Exe -CONFIGUREFIREWALL -ODataPort 449 -RequireODataSsl
+    ```
+    - Run the following PowerShell commands:
+    ```
+    asnp citrix.\* (if not already run within this window)
+    get-MonitorServiceInstance | register-ConfigServiceInstance
+    Get-ConfigRegisteredServiceInstance -ServiceType Config |
+    Reset-MonitorServiceGroupMembership
+    ```
+***Part 2.2: Modify the Monitor Service configuration settings*** **(applicable for OData V4 only)**
+
+1.  <add key="owin:baseAddress" value="https://localhost/citrix/monitor/odata/v4" />
+1.  From any Delivery Controller in the Site, run the following PowerShell commands once. This removes the Monitor Service registration with the Configuration Service.
+    ```
+    asnp citrix.\*
+    \$serviceGroup = get-configregisteredserviceinstance -servicetype
+    Monitor | Select -First 1 ServiceGroupUid
+    remove-configserviceGroup -ServiceGroupUid
+    \$serviceGroup.ServiceGroupUid
+    ```
+1.  Do the following on all Controllers in the Site:
+    -  Using a cmd prompt, locate the installed Citrix Monitor directory (typically in C:\\Program Files\\Citrix\\Monitor\\Service). Within that directory run:
+    ```
+    Citrix.Monitor.Exe -ConfigureFirewall -ODataPort 443 -RequireODataTls -ODataSdkPort 443 -RequireODataSdkTls
     ```
     - Run the following PowerShell commands:
     ```
