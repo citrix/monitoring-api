@@ -172,7 +172,7 @@ appid='{00000000-0000-0000-0000-000000000000}'
     ```
 ***Part 2.2: Modify the Monitor Service configuration settings*** **(applicable for OData V4 only)**
 
-1.  Open the ```Citrix.Monitor.exe.Config``` file and modify the element given below ("http" to "https"): 
+1.  Open the ```Citrix.Monitor.exe.Config``` file and modify the element given below (```http``` to ```https```): 
 
     ```<add key="owin:baseAddress" value="https://localhost/citrix/monitor/odata/v4" />```
     
