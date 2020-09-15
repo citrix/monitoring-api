@@ -1,11 +1,11 @@
 site_name: Citrix Monitor API Reference     
 site_description:  Citrix Monitor API Reference
-site_title: 'Developer Docs'
+site_title: Developer Docs
 site_author:
 site_url: https://developer-docs.citrix.com
 
 # Copyright
-copyright: '&copy; 1999-2020 Citrix Systems, Inc. All rights reserved. '
+copyright: '&copy; 1999-2020 Citrix Systems, Inc. All rights reserved.'
 
 # Feedback
 
